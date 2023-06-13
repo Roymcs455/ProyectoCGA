@@ -1,0 +1,2 @@
+﻿  FontTypeRendering.cpp
+d:\repos\proyectocga\cgalib\include\headers\fonttyperendering.h(34): fatal error C1083: No se puede abrir el archivo incluir: 'ft2build.h': No such file or directory
