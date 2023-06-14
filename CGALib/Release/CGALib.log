@@ -626,8 +626,10 @@ d:\repos\proyectocga\cgalib\include\headers\camera.h(117): warning C4251: 'Camer
 d:\repos\proyectocga\cgalib\src\thirdpersoncamera.cpp(23): warning C4305: '=': truncamiento de 'double' a 'float'
 d:\repos\proyectocga\cgalib\src\thirdpersoncamera.cpp(25): warning C4305: '=': truncamiento de 'double' a 'float'
   TimeManager.cpp
-     Creando biblioteca D:\Repos\ProyectoCGA\14-OpenAL\Release\CGALib.lib y objeto D:\Repos\ProyectoCGA\14-OpenAL\Release\CGALib.exp
+     Creando biblioteca D:\Repos\ProyectoCGA\Release\CGALib.lib y objeto D:\Repos\ProyectoCGA\Release\CGALib.exp
   Generando código
-  All 1485 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  1469 of 1485 functions (98.9%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Generación de código finalizada
-  CGALib.vcxproj -> D:\Repos\ProyectoCGA\14-OpenAL\Release\CGALib.dll
+  CGALib.vcxproj -> D:\Repos\ProyectoCGA\Release\CGALib.dll

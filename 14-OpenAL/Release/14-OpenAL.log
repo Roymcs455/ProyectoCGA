@@ -249,23 +249,25 @@ d:\repos\proyectocga\14-openal\src\main.cpp(2336): warning C4244: '=': conversi�
           ]
 d:\repos\proyectocga\14-openal\src\main.cpp(2370): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 d:\repos\proyectocga\14-openal\src\main.cpp(2371): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-     Creando biblioteca D:\Repos\ProyectoCGA\14-OpenAL\Release\14-OpenAL.lib y objeto D:\Repos\ProyectoCGA\14-OpenAL\Release\14-OpenAL.exp
+     Creando biblioteca D:\Repos\ProyectoCGA\Release\14-OpenAL.lib y objeto D:\Repos\ProyectoCGA\Release\14-OpenAL.exp
 LINK : warning LNK4098: la biblioteca predeterminada'MSVCRTD' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
   Generando código
-  All 1851 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  1833 of 1851 functions (99.0%) were compiled, the rest were copied from previous compilation.
+    115 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Generación de código finalizada
-glfw3.lib(context.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(context.obj)' o en 'D:\Repos\ProyectoCGA\14-OpenAL\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(init.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(init.obj)' o en 'D:\Repos\ProyectoCGA\14-OpenAL\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(input.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(input.obj)' o en 'D:\Repos\ProyectoCGA\14-OpenAL\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(monitor.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(monitor.obj)' o en 'D:\Repos\ProyectoCGA\14-OpenAL\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(vulkan.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(vulkan.obj)' o en 'D:\Repos\ProyectoCGA\14-OpenAL\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(window.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(window.obj)' o en 'D:\Repos\ProyectoCGA\14-OpenAL\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(win32_init.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_init.obj)' o en 'D:\Repos\ProyectoCGA\14-OpenAL\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(win32_joystick.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_joystick.obj)' o en 'D:\Repos\ProyectoCGA\14-OpenAL\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(win32_monitor.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_monitor.obj)' o en 'D:\Repos\ProyectoCGA\14-OpenAL\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(win32_time.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_time.obj)' o en 'D:\Repos\ProyectoCGA\14-OpenAL\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(win32_tls.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_tls.obj)' o en 'D:\Repos\ProyectoCGA\14-OpenAL\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(win32_window.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_window.obj)' o en 'D:\Repos\ProyectoCGA\14-OpenAL\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(wgl_context.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(wgl_context.obj)' o en 'D:\Repos\ProyectoCGA\14-OpenAL\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(egl_context.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(egl_context.obj)' o en 'D:\Repos\ProyectoCGA\14-OpenAL\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-  14-OpenAL.vcxproj -> D:\Repos\ProyectoCGA\14-OpenAL\Release\14-OpenAL.exe
+glfw3.lib(context.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(context.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(init.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(init.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(input.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(input.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(monitor.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(monitor.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(vulkan.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(vulkan.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(window.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(window.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(win32_init.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_init.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(win32_joystick.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_joystick.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(win32_monitor.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_monitor.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(win32_time.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_time.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(win32_tls.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_tls.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(win32_window.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_window.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(wgl_context.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(wgl_context.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(egl_context.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(egl_context.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+  14-OpenAL.vcxproj -> D:\Repos\ProyectoCGA\Release\14-OpenAL.exe
