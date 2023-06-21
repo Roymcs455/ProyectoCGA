@@ -49,6 +49,8 @@
 // OpenAL include
 #include <AL/alut.h>
 
+#include "Headers/Tablero.h"
+
 #define ARRAY_SIZE_IN_ELEMENTS(a) (sizeof(a)/sizeof(a[0]))
 
 int screenWidth;
