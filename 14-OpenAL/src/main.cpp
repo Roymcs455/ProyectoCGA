@@ -76,7 +76,11 @@ Shader shaderViewDepth;
 //Shader para dibujar el buffer de profunidad
 Shader shaderDepth;
 
-std::shared_ptr<Camera> camera(new ThirdPersonCamera());
+//Presiento que no vale la pena utilizar una cámara en primera persona
+//std::shared_ptr<Camera> camera(new ThirdPersonCamera()); 
+//Mejor utilizar en primera:
+std::shared_ptr<FirstPersonCamera> camera(new FirstPersonCamera());
+
 float distanceFromTarget = 7.0;
 
 Sphere skyboxSphere(20, 20);
@@ -590,9 +594,11 @@ void init(int width, int height, std::string strTitle, bool bFullScreen) {
 	mayowModelAnimate.loadModel("../models/mayow/personaje2.fbx");
 	mayowModelAnimate.setShader(&shaderMulLighting);
 
-	camera->setPosition(glm::vec3(0.0, 0.0, 10.0));
-	camera->setDistanceFromTarget(distanceFromTarget);
-	camera->setSensitivity(1.0);
+	camera->setPosition(glm::vec3(0.0, 10.0, 0.0));
+
+	//Variables para Camara en Tercera Persona
+	//camera->setDistanceFromTarget(distanceFromTarget);
+	//camera->setSensitivity(1.0);
 
 	// Definimos el tamanio de la imagen
 	int imageWidth, imageHeight;
@@ -1259,12 +1265,28 @@ bool processInput(bool continueApplication) {
 		return false;
 	}
 
+	// Para camara en tercera persona:
+	/*
 	if(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
 		camera->mouseMoveCamera(offsetX, 0.0, deltaTime);
 	if(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS)
 		camera->mouseMoveCamera(0.0, offsetY, deltaTime);
+	*/
+
+	// Para camara en primera persona:
+	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+		camera->moveFrontCamera(true, deltaTime);
+	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+		camera->moveFrontCamera(false, deltaTime);
+	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+		camera->moveRightCamera(false, deltaTime);
+	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+		camera->moveRightCamera(true, deltaTime);
+	if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
+		camera->mouseMoveCamera(offsetX, offsetY, deltaTime);
 	offsetX = 0;
 	offsetY = 0;
+	//std::cout << "Angulo: " << camera-> << std::endl;
 
 	// Seleccionar modelo
 	if (enableCountSelected && glfwGetKey(window, GLFW_KEY_TAB) == GLFW_PRESS){
@@ -1439,8 +1461,9 @@ void applicationLoop() {
 		std::vector<float> matrixDartJoints;
 		std::vector<glm::mat4> matrixDart;
 
-		glm::mat4 projection = glm::perspective(glm::radians(45.0f),
+		/*glm::mat4 projection = glm::perspective(glm::radians(45.0f),
 				(float) screenWidth / (float) screenHeight, 0.1f, 100.0f);
+		*/
 
 		if(modelSelected == 1){
 			axis = glm::axis(glm::quat_cast(modelMatrixDart));
@@ -1453,16 +1476,23 @@ void applicationLoop() {
 			target = modelMatrixMayow[3];
 		}
 
+		/*
 		if(std::isnan(angleTarget))
 			angleTarget = 0.0;
 		if(axis.y < 0)
 			angleTarget = -angleTarget;
 		if(modelSelected == 1)
 			angleTarget -= glm::radians(90.0f);
+		
 		camera->setCameraTarget(target);
 		camera->setAngleTarget(angleTarget);
 		camera->updateCamera();
 		view = camera->getViewMatrix();
+		*/
+
+		glm::mat4 projection = glm::perspective(glm::radians(45.0f),
+			(float)screenWidth / (float)screenHeight, 0.01f, 100.0f);
+		glm::mat4 view = camera->getViewMatrix();
 
 		// Matriz de proyección del shadow mapping
 		glm::mat4 lightProjection, lightView;
@@ -2013,7 +2043,7 @@ void applicationLoop() {
 		listenerOri[5] = upModel.z;
 
 		// Listener for the First person camera
-		/*listenerPos[0] = camera->getPosition().x;
+		listenerPos[0] = camera->getPosition().x;
 		listenerPos[1] = camera->getPosition().y;
 		listenerPos[2] = camera->getPosition().z;
 		alListenerfv(AL_POSITION, listenerPos);
@@ -2022,7 +2052,7 @@ void applicationLoop() {
 		listenerOri[2] = camera->getFront().z;
 		listenerOri[3] = camera->getUp().x;
 		listenerOri[4] = camera->getUp().y;
-		listenerOri[5] = camera->getUp().z;*/
+		listenerOri[5] = camera->getUp().z;
 		alListenerfv(AL_ORIENTATION, listenerOri);
 
 		for(unsigned int i = 0; i < sourcesPlay.size(); i++){
