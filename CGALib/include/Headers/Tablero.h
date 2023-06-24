@@ -17,6 +17,7 @@ public:
 	bool verificarVictoria() const;
 	bool verificarDerrota() const;
 	// Otros métodos y funciones según la lógica del juego
+	
 };
 
 #endif
