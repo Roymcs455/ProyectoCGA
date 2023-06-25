@@ -27,7 +27,7 @@
   #endif
 #endif
 
-#define YAW	-90.0f
+#define YAW	90.0f
 #define PITCH -45.0f
 
 #include "Camera.h"

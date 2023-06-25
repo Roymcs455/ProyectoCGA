@@ -171,44 +171,34 @@ d:\repos\proyectocga\cgalib\include\headers\animationutils.h(163): warning C4273
 d:\repos\proyectocga\cgalib\include\headers\animationutils.h(184): warning C4273: 'interpolate': vinculación de DLL incoherente
   d:\repos\proyectocga\cgalib\include\headers\animationutils.h(54): note: vea la definición anterior de 'interpolate'
 d:\repos\proyectocga\cgalib\include\headers\colisiones.h(136): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-d:\repos\proyectocga\14-openal\src\main.cpp(880): warning C4018: '<': no coinciden signed/unsigned
-d:\repos\proyectocga\14-openal\src\main.cpp(1097): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-d:\repos\proyectocga\14-openal\src\main.cpp(1098): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-d:\repos\proyectocga\14-openal\src\main.cpp(1099): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+d:\repos\proyectocga\14-openal\src\main.cpp(52): error C2059: error de sintaxis: '<<'
+d:\repos\proyectocga\14-openal\src\main.cpp(384): error C2065: 'screenWidth': identificador no declarado
+d:\repos\proyectocga\14-openal\src\main.cpp(424): error C2065: 'screenWidth': identificador no declarado
+d:\repos\proyectocga\14-openal\src\main.cpp(883): warning C4018: '<': no coinciden signed/unsigned
+d:\repos\proyectocga\14-openal\src\main.cpp(1083): error C2065: 'screenWidth': identificador no declarado
 d:\repos\proyectocga\14-openal\src\main.cpp(1100): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-d:\repos\proyectocga\14-openal\src\main.cpp(1104): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-d:\repos\proyectocga\14-openal\src\main.cpp(1133): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-d:\repos\proyectocga\14-openal\src\main.cpp(1133): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-d:\repos\proyectocga\14-openal\src\main.cpp(1135): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-d:\repos\proyectocga\14-openal\src\main.cpp(1135): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-d:\repos\proyectocga\14-openal\src\main.cpp(1166): warning C4101: 'view': variable local sin referencia
-d:\repos\proyectocga\14-openal\src\main.cpp(1167): warning C4101: 'axis': variable local sin referencia
-d:\repos\proyectocga\14-openal\src\main.cpp(1680): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+d:\repos\proyectocga\14-openal\src\main.cpp(1101): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+d:\repos\proyectocga\14-openal\src\main.cpp(1102): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+d:\repos\proyectocga\14-openal\src\main.cpp(1103): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+d:\repos\proyectocga\14-openal\src\main.cpp(1107): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+d:\repos\proyectocga\14-openal\src\main.cpp(1136): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+d:\repos\proyectocga\14-openal\src\main.cpp(1136): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\repos\proyectocga\14-openal\src\main.cpp(1138): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+d:\repos\proyectocga\14-openal\src\main.cpp(1138): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\repos\proyectocga\14-openal\src\main.cpp(1151): error C2065: 'screenWidth': identificador no declarado
+d:\repos\proyectocga\14-openal\src\main.cpp(1151): error C2672: 'glm::perspective': no se encontró una función sobrecargada que coincida
+d:\repos\proyectocga\14-openal\src\main.cpp(1151): error C2780: 'glm::mat<4,4,T,0> glm::perspective(T,T,T,T)': se esperan 4 argumentos; 3 proporcionados
+  d:\repos\proyectocga\external\glm\glm\ext\matrix_clip_space.hpp(332): note: vea la declaración de 'glm::perspective'
+d:\repos\proyectocga\14-openal\src\main.cpp(1152): error C2065: 'screenWidth': identificador no declarado
+d:\repos\proyectocga\14-openal\src\main.cpp(1209): error C2065: 'screenWidth': identificador no declarado
+d:\repos\proyectocga\14-openal\src\main.cpp(1208): error C2672: 'glm::perspective': no se encontró una función sobrecargada que coincida
+d:\repos\proyectocga\14-openal\src\main.cpp(1209): error C2780: 'glm::mat<4,4,T,0> glm::perspective(T,T,T,T)': se esperan 4 argumentos; 3 proporcionados
+  d:\repos\proyectocga\external\glm\glm\ext\matrix_clip_space.hpp(332): note: vea la declaración de 'glm::perspective'
+d:\repos\proyectocga\14-openal\src\main.cpp(1321): error C2065: 'screenWidth': identificador no declarado
+d:\repos\proyectocga\14-openal\src\main.cpp(1683): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\14-openal\src\main.cpp(1714): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-d:\repos\proyectocga\14-openal\src\main.cpp(1715): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-     Creando biblioteca D:\Repos\ProyectoCGA\Release\14-OpenAL.lib y objeto D:\Repos\ProyectoCGA\Release\14-OpenAL.exp
-LINK : warning LNK4098: la biblioteca predeterminada'MSVCRTD' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
-  Generando código
-  0 of 1649 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-  Generación de código finalizada
-glfw3.lib(context.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(context.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(init.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(init.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(input.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(input.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(monitor.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(monitor.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(vulkan.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(vulkan.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(window.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(window.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(win32_init.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_init.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(win32_joystick.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_joystick.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(win32_monitor.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_monitor.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(win32_time.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_time.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(win32_tls.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_tls.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(win32_window.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_window.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(wgl_context.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(wgl_context.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(egl_context.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(egl_context.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-  14-OpenAL.vcxproj -> D:\Repos\ProyectoCGA\Release\14-OpenAL.exe
+d:\repos\proyectocga\14-openal\src\main.cpp(1717): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+d:\repos\proyectocga\14-openal\src\main.cpp(1718): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos

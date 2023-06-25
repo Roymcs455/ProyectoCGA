@@ -1,8 +1,19 @@
-﻿  Casilla.cpp
-  Tablero.cpp
+﻿  FirstPersonCamera.cpp
+d:\descargas\decimo semestre\cga\proyectocga\cgalib\include\headers\camera.h(111): warning C4251: 'Camera::position': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+  d:\descargas\decimo semestre\cga\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
+d:\descargas\decimo semestre\cga\proyectocga\cgalib\include\headers\camera.h(112): warning C4251: 'Camera::front': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+  d:\descargas\decimo semestre\cga\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
+d:\descargas\decimo semestre\cga\proyectocga\cgalib\include\headers\camera.h(113): warning C4251: 'Camera::up': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+  d:\descargas\decimo semestre\cga\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
+d:\descargas\decimo semestre\cga\proyectocga\cgalib\include\headers\camera.h(114): warning C4251: 'Camera::right': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+  d:\descargas\decimo semestre\cga\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
+d:\descargas\decimo semestre\cga\proyectocga\cgalib\include\headers\camera.h(115): warning C4251: 'Camera::worldUp': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+  d:\descargas\decimo semestre\cga\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
+d:\descargas\decimo semestre\cga\proyectocga\cgalib\include\headers\camera.h(117): warning C4251: 'Camera::cameraTarget': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+  d:\descargas\decimo semestre\cga\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
      Creando biblioteca D:\Descargas\Decimo Semestre\CGA\ProyectoCGA\Release\CGALib.lib y objeto D:\Descargas\Decimo Semestre\CGA\ProyectoCGA\Release\CGALib.exp
   Generando código
-  0 of 1485 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  1 of 1485 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     15 functions had inline decision re-evaluated but remain unchanged
   Generación de código finalizada
