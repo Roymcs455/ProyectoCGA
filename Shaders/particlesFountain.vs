@@ -18,6 +18,15 @@ void main()
     vec3 pos = vec3(0.0);
     Transp = 0.0;
 
+	// Validar que ya haya nacido la particula
+	if (Time > StartTime) {
+		float t = Time - StartTime;
+		if (t < ParticleLifetime) { //Validad que no haya muerto la particula
+			pos = VertexInitVel * t + Gravity * t * t;
+			Transp = 1.0 - t / ParticleLifetime;
+		}
+	}
+
     // Draw at the current position
     gl_Position = projection * view * model * vec4(pos, 1.0);
 }

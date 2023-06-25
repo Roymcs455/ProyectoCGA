@@ -49,8 +49,6 @@
 // OpenAL include
 #include <AL/alut.h>
 
-#include "Headers/Tablero.h"
-
 #define ARRAY_SIZE_IN_ELEMENTS(a) (sizeof(a)/sizeof(a[0]))
 
 int screenWidth;
@@ -124,12 +122,12 @@ GL_TEXTURE_CUBE_MAP_NEGATIVE_Y,
 GL_TEXTURE_CUBE_MAP_POSITIVE_Z,
 GL_TEXTURE_CUBE_MAP_NEGATIVE_Z };
 
-std::string fileNames[6] = { "../Textures/mp_bloodvalley/blood-valley_ft.tga",
-		"../Textures/mp_bloodvalley/blood-valley_bk.tga",
-		"../Textures/mp_bloodvalley/blood-valley_up.tga",
-		"../Textures/mp_bloodvalley/blood-valley_dn.tga",
-		"../Textures/mp_bloodvalley/blood-valley_rt.tga",
-		"../Textures/mp_bloodvalley/blood-valley_lf.tga" };
+std::string fileNames[6] = { "../Textures/Skybox/midnight-silence/midnight-silence_ft.tga",
+							 "../Textures/Skybox/midnight-silence/midnight-silence_bk.tga",
+							 "../Textures/Skybox/midnight-silence/midnight-silence_up.tga",
+							 "../Textures/Skybox/midnight-silence/midnight-silence_dn.tga",
+							 "../Textures/Skybox/midnight-silence/midnight-silence_rt.tga",
+							 "../Textures/Skybox/midnight-silence/midnight-silence_lf.tga" };
 
 bool exitApp = false;
 int lastMousePosX, offsetX = 0;
@@ -473,9 +471,9 @@ void init(int width, int height, std::string strTitle, bool bFullScreen) {
 
 	terrain.init();
 	terrain.setShader(&shaderTerrain);
-	terrain.setPosition(glm::vec3(100, 0, 100));
+	terrain.setPosition(glm::vec3(10, 0, 10));
 
-	camera->setPosition(glm::vec3(0.0, 10.0, 0.0));
+	camera->setPosition(glm::vec3(10.0, 15.0, -8.0));
 
 	//Variables para Camara en Tercera Persona
 	//camera->setDistanceFromTarget(distanceFromTarget);
@@ -1257,7 +1255,7 @@ void applicationLoop() {
 		 *******************************************/
 		shaderMulLighting.setVectorFloat3("fogColor", glm::value_ptr(glm::vec3(0.5, 0.5, 0.4)));
 		shaderTerrain.setVectorFloat3("fogColor", glm::value_ptr(glm::vec3(0.5, 0.5, 0.4)));
-		shaderSkybox.setVectorFloat3("fogColor", glm::value_ptr(glm::vec3(0.5, 0.5, 0.4)));
+		shaderSkybox.setVectorFloat3("fogColor", glm::value_ptr(glm::vec3(0.7, 0.7, 0.7)));
 
 		/*******************************************
 		 * Propiedades Luz direccional
@@ -1298,7 +1296,7 @@ void applicationLoop() {
 		glClear(GL_DEPTH_BUFFER_BIT);
 		//glCullFace(GL_FRONT);
 		prepareDepthScene();
-		renderScene(false);
+		renderScene(true);
 		//glCullFace(GL_BACK);
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
