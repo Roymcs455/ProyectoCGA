@@ -81,6 +81,7 @@ Shader shaderDepth;
 //Mejor utilizar en primera:
 std::shared_ptr<FirstPersonCamera> camera(new FirstPersonCamera());
 
+bool debugEnabler = false;
 float distanceFromTarget = 7.0;
 
 Sphere skyboxSphere(20, 20);
@@ -1350,30 +1351,50 @@ void applicationLoop() {
 		 * Creacion de colliders
 		 * IMPORTANT do this before interpolations
 		 *******************************************/
-
+		for (int i = 0; i < 11; i++)
+		{
+			glm::mat4 modelMatrixCasillaCollider = glm::translate(glm::mat4(1.0f),glm::vec3(0.0f,0.0f,i*2.0f));
+			
+			for (int j = 0; j < 11; j++)
+			{
+				AbstractModel::OBB casillaCollider;
+				//modelMatrixCasillaCollider = glm::scale(modelMatrixCasillaCollider, glm::vec3(0.5, 0.5, 0.5));
+				// Set the orientation of collider before doing the scale
+				casillaCollider.u = glm::quat_cast(modelMatrixCasillaCollider);
+				modelMatrixCasillaCollider = glm::translate(modelMatrixCasillaCollider, modelCasillaBlanca.getObb().c);
+				casillaCollider.c = glm::vec3(modelMatrixCasillaCollider[3][0], 0.25f, modelMatrixCasillaCollider[3][2]);
+				casillaCollider.e = modelCasillaBlanca.getObb().e*0.99f;
+				addOrUpdateColliders(collidersOBB, "casilla-" + std::to_string(i)+"."+std::to_string(j), casillaCollider, modelMatrixCasillaCollider);
+				modelMatrixCasillaCollider = glm::translate(modelMatrixCasillaCollider, glm::vec3(2.0f,0.0f,0.0f));
+			}
+		}
 		/*******************************************
 		 * Render de colliders
 		 *******************************************/
-		for (std::map<std::string, std::tuple<AbstractModel::OBB, glm::mat4, glm::mat4> >::iterator it =
-				collidersOBB.begin(); it != collidersOBB.end(); it++) {
-			glm::mat4 matrixCollider = glm::mat4(1.0);
-			matrixCollider = glm::translate(matrixCollider, std::get<0>(it->second).c);
-			matrixCollider = matrixCollider * glm::mat4(std::get<0>(it->second).u);
-			matrixCollider = glm::scale(matrixCollider, std::get<0>(it->second).e * 2.0f);
-			boxCollider.setColor(glm::vec4(1.0, 1.0, 1.0, 1.0));
-			boxCollider.enableWireMode();
-			boxCollider.render(matrixCollider);
+		if (debugEnabler== true)
+		{
+			for (std::map<std::string, std::tuple<AbstractModel::OBB, glm::mat4, glm::mat4> >::iterator it =
+					collidersOBB.begin(); it != collidersOBB.end(); it++) {
+				glm::mat4 matrixCollider = glm::mat4(1.0);
+				matrixCollider = glm::translate(matrixCollider, std::get<0>(it->second).c);
+				matrixCollider = matrixCollider * glm::mat4(std::get<0>(it->second).u);
+				matrixCollider = glm::scale(matrixCollider, std::get<0>(it->second).e * 2.0f);
+				boxCollider.setColor(glm::vec4(1.0, 1.0, 1.0, 1.0));
+				boxCollider.enableWireMode();
+				boxCollider.render(matrixCollider);
+			}
+			for (std::map<std::string, std::tuple<AbstractModel::SBB, glm::mat4, glm::mat4> >::iterator it =
+					collidersSBB.begin(); it != collidersSBB.end(); it++) {
+				glm::mat4 matrixCollider = glm::mat4(1.0);
+				matrixCollider = glm::translate(matrixCollider, std::get<0>(it->second).c);
+				matrixCollider = glm::scale(matrixCollider, glm::vec3(std::get<0>(it->second).ratio * 2.0f));
+				sphereCollider.setColor(glm::vec4(1.0, 1.0, 1.0, 1.0));
+				sphereCollider.enableWireMode();
+				sphereCollider.render(matrixCollider);
+			}
+
 		}
 
-		for (std::map<std::string, std::tuple<AbstractModel::SBB, glm::mat4, glm::mat4> >::iterator it =
-				collidersSBB.begin(); it != collidersSBB.end(); it++) {
-			glm::mat4 matrixCollider = glm::mat4(1.0);
-			matrixCollider = glm::translate(matrixCollider, std::get<0>(it->second).c);
-			matrixCollider = glm::scale(matrixCollider, glm::vec3(std::get<0>(it->second).ratio * 2.0f));
-			sphereCollider.setColor(glm::vec4(1.0, 1.0, 1.0, 1.0));
-			sphereCollider.enableWireMode();
-			sphereCollider.render(matrixCollider);
-		}
 		std::map<std::string, std::tuple<AbstractModel::SBB, glm::mat4, glm::mat4>>::iterator itSBB;
 
 		for (itSBB = collidersSBB.begin(); itSBB != collidersSBB.end(); itSBB++)
@@ -1584,7 +1605,7 @@ void renderScene(bool renderParticles){
 	matrixModelFichaBlanca[3][0] = terrain.getHeightTerrain(matrixModelFichaBlanca[3][0], matrixModelFichaBlanca[3][2]);
 	modelFichaBlanca.render(matrixModelFichaBlanca);
 	glm::mat4 matrixModelCasillas = glm::mat4(matrixModelCasillaBlanca);
-	
+	if(true)//para debug
 	for (int i = 0; i < 11; i++)
 	{
 		matrixModelCasillas = glm::translate(matrixModelCasillaBlanca,glm::vec3(0.0f,0.0f,i*2.0f));
