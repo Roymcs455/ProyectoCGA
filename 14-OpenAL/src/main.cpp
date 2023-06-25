@@ -49,7 +49,7 @@
 // OpenAL include
 #include <AL/alut.h>
 
-#include "Headers/Tablero.h"
+//#include "hnefatafl.cpp"
 
 #define ARRAY_SIZE_IN_ELEMENTS(a) (sizeof(a)/sizeof(a[0]))
 
@@ -77,12 +77,12 @@ Shader shaderViewDepth;
 Shader shaderDepth;
 
 //Presiento que no vale la pena utilizar una cámara en primera persona
-//std::shared_ptr<Camera> camera(new ThirdPersonCamera()); 
+std::shared_ptr<Camera> camera(new ThirdPersonCamera()); 
 //Mejor utilizar en primera:
-std::shared_ptr<FirstPersonCamera> camera(new FirstPersonCamera());
+//std::shared_ptr<FirstPersonCamera> camera(new FirstPersonCamera());
 
 bool debugEnabler = false;
-float distanceFromTarget = 7.0;
+float distanceFromTarget = 35.0;
 
 Sphere skyboxSphere(20, 20);
 Box boxCollider;
@@ -456,8 +456,9 @@ void init(int width, int height, std::string strTitle, bool bFullScreen) {
 	// Inicialización de las fichas;
 	//modelFichaBlanca.loadModel("../models/PiezaBlanca/PiezaBlanca.obj");
 	
-	/*modelFichaBlanca.loadModel("../models/PiezaBlanca/PiezaBlanca.obj");
+	modelFichaBlanca.loadModel("../models/prueba/prueba.obj");
 	modelFichaBlanca.setShader(&shaderMulLighting);
+	/*
 	modelFichaRey.loadModel("../models/PiezaBlanca/PiezaBlanca.obj");
 	modelFichaRey.setShader(&shaderMulLighting);
 	modelFichaNegra.loadModel("../models/PiezaRoja/PiezaRoja.obj");
@@ -478,8 +479,8 @@ void init(int width, int height, std::string strTitle, bool bFullScreen) {
 	camera->setPosition(glm::vec3(0.0, 10.0, 0.0));
 
 	//Variables para Camara en Tercera Persona
-	//camera->setDistanceFromTarget(distanceFromTarget);
-	//camera->setSensitivity(1.0);
+	camera->setDistanceFromTarget(distanceFromTarget);
+	camera->setSensitivity(1.0);
 
 	// Definimos el tamanio de la imagen
 	int imageWidth, imageHeight;
@@ -1127,24 +1128,15 @@ bool processInput(bool continueApplication) {
 	}
 
 	// Para camara en tercera persona:
-	/*
+	
 	if(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
 		camera->mouseMoveCamera(offsetX, 0.0, deltaTime);
 	if(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS)
 		camera->mouseMoveCamera(0.0, offsetY, deltaTime);
-	*/
+	
 
 	// Para camara en primera persona:
-	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-		camera->moveFrontCamera(true, deltaTime);
-	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-		camera->moveFrontCamera(false, deltaTime);
-	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-		camera->moveRightCamera(false, deltaTime);
-	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-		camera->moveRightCamera(true, deltaTime);
-	if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
-		camera->mouseMoveCamera(offsetX, offsetY, deltaTime);
+	
 	offsetX = 0;
 	offsetY = 0;
 	//std::cout << "Angulo: " << camera-> << std::endl;
@@ -1173,8 +1165,8 @@ void applicationLoop() {
 
 	glm::mat4 view;
 	glm::vec3 axis;
-	glm::vec3 target;
-	float angleTarget;
+	glm::vec3 target = glm::vec3(10.0f,0.0f,10.0f);
+	float angleTarget=90.0f;
 
 	matrixModelFichaBlanca = glm::translate(matrixModelFichaBlanca, glm::vec3(1.0f, 0.0f, 0.0f));
 	//matrixModelFichaBlanca = glm::scale(matrixModelFichaBlanca, glm::vec3(10.0f));
@@ -1204,6 +1196,10 @@ void applicationLoop() {
 		psi = processInput(true);
 
 		std::map<std::string, bool> collisionDetection;
+
+		camera->setCameraTarget(target);
+		camera->setAngleTarget(angleTarget);
+		camera->updateCamera();
 
 
 		glm::mat4 projection = glm::perspective(glm::radians(45.0f),
@@ -1602,8 +1598,8 @@ void renderScene(bool renderParticles){
 	/*******************************************
 	 * Custom objects obj
 	 *******************************************/
-	matrixModelFichaBlanca[3][0] = terrain.getHeightTerrain(matrixModelFichaBlanca[3][0], matrixModelFichaBlanca[3][2]);
-	modelFichaBlanca.render(matrixModelFichaBlanca);
+	//matrixModelFichaBlanca[3][0] = terrain.getHeightTerrain(matrixModelFichaBlanca[3][0], matrixModelFichaBlanca[3][2]);
+	//modelFichaBlanca.render(matrixModelFichaBlanca);
 	glm::mat4 matrixModelCasillas = glm::mat4(matrixModelCasillaBlanca);
 	if(true)//para debug
 	for (int i = 0; i < 11; i++)
@@ -1628,6 +1624,8 @@ void renderScene(bool renderParticles){
 
 
 			matrixModelCasillas = glm::translate(matrixModelCasillas, glm::vec3(2.0f,0.0f,0.0f));
+			
+
 		}
 
 	}
