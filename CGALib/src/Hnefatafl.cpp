@@ -1,44 +1,21 @@
 
-#include "Hnefatafl.h"
+#include "Headers/Hnefatafl.h"
 
-
+/*
 Hnefatafl::Hnefatafl()
 {
 	for (int i = 0; i < BOARD_SIZE; i++)
 	{
 		tablero.push_back(std::vector<CellState>(BOARD_SIZE, EMPTY));
 	}
-
-	ResetTablero();
-	for (int i = 0; i < BOARD_SIZE; i++)
-	{
-		for (int j = 0; j < BOARD_SIZE; j++)
-		{
-			std::cout << tablero[i][j];
-		}
-		std::cout << std::endl;
-	}
 }
 
 Hnefatafl::~Hnefatafl()
 {
-}
+}*/
 void Hnefatafl::ResetTablero()
 {
-	std::vector<std::vector<CellState>> nuevoTablero{
-		{ESCAPE,EMPTY, EMPTY, ATTACKER,ATTACKER,ATTACKER,ATTACKER,ATTACKER, EMPTY,EMPTY,ESCAPE},
-		{EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,ATTACKER,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY},
-		{EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY},
-		{ATTACKER, EMPTY, EMPTY, EMPTY, EMPTY,DEFENDER,EMPTY,EMPTY,EMPTY,EMPTY,ATTACKER},
-		{ATTACKER, EMPTY, EMPTY, EMPTY, DEFENDER,DEFENDER,DEFENDER,EMPTY,EMPTY,EMPTY,ATTACKER},
-		{ATTACKER, ATTACKER, EMPTY, DEFENDER, DEFENDER,KING,DEFENDER,DEFENDER,EMPTY,ATTACKER,ATTACKER},
-		{ATTACKER, EMPTY, EMPTY, EMPTY, DEFENDER,DEFENDER,DEFENDER,EMPTY,EMPTY,EMPTY,ATTACKER},
-		{ATTACKER, EMPTY, EMPTY, EMPTY, EMPTY,DEFENDER,EMPTY,EMPTY,EMPTY,EMPTY,ATTACKER},
-		{EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY},
-		{EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,ATTACKER,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY},
-		{ESCAPE,EMPTY, EMPTY, ATTACKER,ATTACKER,ATTACKER,ATTACKER,ATTACKER, EMPTY,EMPTY,ESCAPE}
-	};
-	tablero = nuevoTablero;
+
 }
 bool Hnefatafl::MoverFicha(int origenX, int origenY, int destinoX, int destinoY)
 {
@@ -120,7 +97,6 @@ bool Hnefatafl::MoverFicha(int origenX, int origenY, int destinoX, int destinoY)
 	{
 		tablero[origenX][origenY] = EMPTY;
 	}
-	
 	if (CapturarEnCasilla(destinoX, destinoY))
 	{
 		victoria = NEGRO;
@@ -139,47 +115,15 @@ CellState Hnefatafl::TipoCasilla(int x, int y)
 	}
 	return INVALID;
 }
-
-bool Hnefatafl::CapturarEnCasilla(int x, int y)
+bool CapturarEnCasilla( int x, int y)
 {
-	CellState fichaCapturadora = TipoCasilla(x,y);
-	
-	if (fichaCapturadora == ATTACKER)
+	/*CellState fichaCapturadora = TipoCasilla(x, y);
+	if (fichaCapturadora == TipoCasilla(x + 2, y)) //Revisa arriba
 	{
-		if (TipoCasilla(x + 1, y) == (DEFENDER||KING))
-		{
-			if (TipoCasilla(x + 2, y) == (ATTACKER || INVALID || ESCAPE) )
-			{
-				tablero[x + 1][y] = EMPTY;
-			}
-		}
-		if (TipoCasilla(x - 1, y) == (DEFENDER || KING))
-		{
-			if (TipoCasilla(x - 2, y) == (ATTACKER || INVALID || ESCAPE) )
-			{
-				tablero[x - 1][y] = EMPTY;
-			}
-		}
-		if (TipoCasilla(x, y - 1) == (DEFENDER || KING))
-		{
-			if (TipoCasilla(x, y - 2) == (ATTACKER || INVALID || ESCAPE) )
-			{
-				tablero[x][y - 1] = EMPTY;
-			}
-		}
-		if (TipoCasilla(x, y + 1) == (DEFENDER || KING))
-		{
-			if (TipoCasilla(x, y + 2) == (ATTACKER || INVALID || ESCAPE) )
-			{
-				tablero[x][y + 1] = EMPTY;
-			}
-		}
-	}
-	else
-	{
+		
+	}*/
 
-	}
-
+	return false;
 }
 
 void Hnefatafl::CambiarJugadorActual()

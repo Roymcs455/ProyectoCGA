@@ -49,7 +49,8 @@
 // OpenAL include
 #include <AL/alut.h>
 
-//#include "hnefatafl.cpp"
+
+#include "Hnefatafl.h"
 
 #define ARRAY_SIZE_IN_ELEMENTS(a) (sizeof(a)/sizeof(a[0]))
 
@@ -98,6 +99,10 @@ Model modelFichaRey;
 Model modelCasillaBlanca;
 Model modelCasillaNegra;
 Model modelCasillaCastillo;
+
+//Tablero de Hnefetafl
+
+Hnefatafl tableroJuego;
 
 
 glm::mat4 matrixModelFichaNegra = glm::mat4(1.0f);
@@ -456,13 +461,13 @@ void init(int width, int height, std::string strTitle, bool bFullScreen) {
 	// Inicialización de las fichas;
 	//modelFichaBlanca.loadModel("../models/PiezaBlanca/PiezaBlanca.obj");
 	
-	modelFichaBlanca.loadModel("../models/prueba/prueba.obj");
+	modelFichaBlanca.loadModel("../models/PiezaDebug/FichaBlanca.obj");
 	modelFichaBlanca.setShader(&shaderMulLighting);
-	/*
-	modelFichaRey.loadModel("../models/PiezaBlanca/PiezaBlanca.obj");
+	modelFichaRey.loadModel("../models/PiezaDebug/FichaRey.obj");
 	modelFichaRey.setShader(&shaderMulLighting);
-	modelFichaNegra.loadModel("../models/PiezaRoja/PiezaRoja.obj");
-	modelFichaNegra.setShader(&shaderMulLighting);*/
+	modelFichaNegra.loadModel("../models/PiezaDebug/FichaNegra.obj");
+	modelFichaNegra.setShader(&shaderMulLighting);
+	
 
 	modelCasillaBlanca.loadModel("../models/CasillaBlanca/casillaBlanca.obj");
 	modelCasillaBlanca.setShader(&shaderMulLighting);
@@ -1622,7 +1627,26 @@ void renderScene(bool renderParticles){
 				modelCasillaNegra.render(matrixModelCasillas);
 			}
 
-
+			switch (tableroJuego.tablero[i][j])
+			{
+			case EMPTY:
+				break;
+			case ESCAPE:
+				break;
+			case KING:
+				modelFichaRey.render(matrixModelCasillas);
+				break;
+			case DEFENDER:
+				modelFichaBlanca.render(matrixModelCasillas);
+				break;
+			case ATTACKER:
+				modelFichaNegra.render(matrixModelCasillas);
+				break;
+			case INVALID:
+				break;
+			default:
+				break;
+			}
 			matrixModelCasillas = glm::translate(matrixModelCasillas, glm::vec3(2.0f,0.0f,0.0f));
 			
 
@@ -1766,6 +1790,7 @@ void renderScene(bool renderParticles){
 
 int main(int argc, char **argv) {
 	init(800, 700, "Window GLFW", false);
+	
 	applicationLoop();
 	destroy();
 	return 1;

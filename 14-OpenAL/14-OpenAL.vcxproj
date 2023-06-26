@@ -22,6 +22,9 @@
     <ClCompile Include="src\hnefatafl.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Hnefatafl.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{efc2fe8a-1ac7-4969-9970-e8ba7b89127b}</ProjectGuid>
