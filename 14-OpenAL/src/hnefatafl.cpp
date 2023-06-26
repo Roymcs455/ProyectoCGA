@@ -142,6 +142,7 @@ CellState Hnefatafl::TipoCasilla(int x, int y)
 
 bool Hnefatafl::CapturarEnCasilla(int x, int y)
 {
+	return true;
 	CellState fichaCapturadora = TipoCasilla(x,y);
 	
 	if (fichaCapturadora == ATTACKER)
