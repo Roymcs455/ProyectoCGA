@@ -98,6 +98,7 @@ Model modelFichaRey;
 Model modelCasillaBlanca;
 Model modelCasillaNegra;
 Model modelCasillaCastillo;
+Model modelFichaPrueba;
 
 //Tablero de Hnefetafl
 
@@ -107,6 +108,7 @@ Hnefatafl tableroJuego;
 glm::mat4 matrixModelFichaNegra = glm::mat4(1.0f);
 glm::mat4 matrixModelFichaBlanca = glm::mat4(1.0f);
 glm::mat4 matrixModelFichaRey = glm::mat4(1.0f);
+glm::mat4 matirxModelFichaPrueba = glm::mat4(1.0f);
 
 glm::mat4 matrixModelCasillaNegra = glm::mat4(1.0f);
 glm::mat4 matrixModelCasillaBlanca = glm::mat4(1.0f);
@@ -206,8 +208,7 @@ std::vector<bool> sourcesPlay = {true, true, true};
 
 // Se definen todos las funciones.
 void reshapeCallback(GLFWwindow *Window, int widthRes, int heightRes);
-void keyCallback(GLFWwindow *window, int key, int scancode, int action,
-		int mode);
+void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mode);
 void mouseCallback(GLFWwindow *window, double xpos, double ypos);
 void mouseButtonCallback(GLFWwindow *window, int button, int state, int mod);
 void scrollCallback(GLFWwindow* window, double xoffset, double yoffset);
@@ -455,23 +456,21 @@ void init(int width, int height, std::string strTitle, bool bFullScreen) {
 	boxLightViewBox.setShader(&shaderViewDepth);
 
 	// Inicialización de las fichas;
-	//modelFichaBlanca.loadModel("../models/PiezaBlanca/PiezaBlanca.obj");
-	
-	modelFichaBlanca.loadModel("../models/PiezaDebug/FichaBlanca.obj");
+	modelFichaBlanca.loadModel("../models/PiezaBlanca/PiezaBlanca.obj");
 	modelFichaBlanca.setShader(&shaderMulLighting);
-	modelFichaRey.loadModel("../models/PiezaDebug/FichaRey.obj");
+	modelFichaRey.loadModel("../models/PiezaRey/PiezaRey.obj");
 	modelFichaRey.setShader(&shaderMulLighting);
-	modelFichaNegra.loadModel("../models/PiezaDebug/FichaNegra.obj");
+	modelFichaNegra.loadModel("../models/PiezaRoja/PiezaRoja.obj");
 	modelFichaNegra.setShader(&shaderMulLighting);
+	//modelFichaPrueba.loadModel("../models/PiezaBlanca/PiezaBlanca.obj");
+	//modelFichaPrueba.setShader(&shaderMulLighting);
 	
-
 	modelCasillaBlanca.loadModel("../models/CasillaBlanca/casillaBlanca.obj");
 	modelCasillaBlanca.setShader(&shaderMulLighting);
 	modelCasillaNegra.loadModel("../models/CasillaNegra/casillaNegra.obj");
 	modelCasillaNegra.setShader(&shaderMulLighting);
 	modelCasillaCastillo.loadModel("../models/CasillaCastillo/casillaCastillo.obj");
 	modelCasillaCastillo.setShader(&shaderMulLighting);
-	
 
 	terrain.init();
 	terrain.setShader(&shaderTerrain);
@@ -1034,11 +1033,11 @@ void destroy() {
 	modelFichaBlanca.destroy();
 	modelFichaRey.destroy();
 	modelFichaNegra.destroy();
+	modelFichaPrueba.destroy();
 
 	modelCasillaBlanca.destroy();
 	modelCasillaNegra.destroy();
 	modelCasillaCastillo.destroy();
-
 
 	// Textures Delete
 	glBindTexture(GL_TEXTURE_2D, 0);
@@ -1170,11 +1169,14 @@ void applicationLoop() {
 	float angleTarget=90.0f;
 
 	matrixModelFichaBlanca = glm::translate(matrixModelFichaBlanca, glm::vec3(1.0f, 0.0f, 0.0f));
-	matrixModelFichaBlanca = glm::scale(matrixModelFichaBlanca, glm::vec3(10.0f));
+	matrixModelFichaBlanca = glm::scale(matrixModelFichaBlanca, glm::vec3(1.0f));
 	matrixModelFichaRey = glm::translate(matrixModelFichaRey, glm::vec3(-6.0f, 0.0f, 0.0f));
-	matrixModelFichaRey = glm::scale(matrixModelFichaBlanca, glm::vec3(10.0f));
+	matrixModelFichaRey = glm::scale(matrixModelFichaBlanca, glm::vec3(1.0f));
 	matrixModelFichaNegra = glm::translate(matrixModelFichaNegra, glm::vec3(-9.0f, 0.0f, 0.0f));
-	matrixModelFichaNegra = glm::scale(matrixModelFichaBlanca, glm::vec3(10.0f));
+	matrixModelFichaNegra = glm::scale(matrixModelFichaBlanca, glm::vec3(2.0f));
+	glm::mat4 matrixModelPiezaFichaPrueba = glm::mat4(matirxModelFichaPrueba);
+	matrixModelPiezaFichaPrueba = glm::scale(matrixModelPiezaFichaPrueba, glm::vec3(3.0f, 3.0f, 3.0f));
+	modelFichaPrueba.render(matrixModelPiezaFichaPrueba);
 
 	lastTime = TimeManager::Instance().GetTime();
 
@@ -1645,8 +1647,7 @@ void renderScene(bool renderParticles){
 				break;
 			}
 			matrixModelCasillas = glm::translate(matrixModelCasillas, glm::vec3(2.0f,0.0f,0.0f));
-			
-
+		
 		}
 
 	}
