@@ -91,14 +91,12 @@ Box boxViewDepth;
 Box boxLightViewBox;
 
 //CARGA DE MODELOS
-
 Model modelFichaNegra;
 Model modelFichaBlanca;
 Model modelFichaRey;
 Model modelCasillaBlanca;
 Model modelCasillaNegra;
 Model modelCasillaCastillo;
-
 
 glm::mat4 matrixModelFichaNegra = glm::mat4(1.0f);
 glm::mat4 matrixModelFichaBlanca = glm::mat4(1.0f);
@@ -140,11 +138,8 @@ glm::vec3 origenRayoPicking;
 glm::vec3 destinoRayoPicking;
 glm::vec3 directorioRayoPicking;
 
-
-
 double deltaTime;
 double currTime, lastTime;
-
 
 // Definition for the particle system
 GLuint initVel, startTime;
@@ -454,15 +449,12 @@ void init(int width, int height, std::string strTitle, bool bFullScreen) {
 	boxLightViewBox.setShader(&shaderViewDepth);
 
 	// Inicialización de las fichas;
-	//modelFichaBlanca.loadModel("../models/PiezaBlanca/PiezaBlanca.obj");
-	
-	modelFichaBlanca.loadModel("../models/prueba/prueba.obj");
+	modelFichaBlanca.loadModel("../models/PiezaBlanca/PiezaBlanca_Ok.obj");
 	modelFichaBlanca.setShader(&shaderMulLighting);
-	/*
-	modelFichaRey.loadModel("../models/PiezaBlanca/PiezaBlanca.obj");
+	//modelFichaRey.loadModel("../models/PiezaRey/PiezaRey_Ok.obj");
 	modelFichaRey.setShader(&shaderMulLighting);
-	modelFichaNegra.loadModel("../models/PiezaRoja/PiezaRoja.obj");
-	modelFichaNegra.setShader(&shaderMulLighting);*/
+	//modelFichaNegra.loadModel("../models/PiezaRoja/PiezaRoja_Ok.obj");
+	modelFichaNegra.setShader(&shaderMulLighting);
 
 	modelCasillaBlanca.loadModel("../models/CasillaBlanca/casillaBlanca.obj");
 	modelCasillaBlanca.setShader(&shaderMulLighting);
@@ -1169,9 +1161,11 @@ void applicationLoop() {
 	float angleTarget=90.0f;
 
 	matrixModelFichaBlanca = glm::translate(matrixModelFichaBlanca, glm::vec3(1.0f, 0.0f, 0.0f));
-	//matrixModelFichaBlanca = glm::scale(matrixModelFichaBlanca, glm::vec3(10.0f));
+	matrixModelFichaBlanca = glm::scale(matrixModelFichaBlanca, glm::vec3(10.0f));
 	matrixModelFichaRey = glm::translate(matrixModelFichaRey, glm::vec3(-6.0f, 0.0f, 0.0f));
+	matrixModelFichaRey = glm::scale(matrixModelFichaBlanca, glm::vec3(10.0f));
 	matrixModelFichaNegra = glm::translate(matrixModelFichaNegra, glm::vec3(-9.0f, 0.0f, 0.0f));
+	matrixModelFichaNegra = glm::scale(matrixModelFichaBlanca, glm::vec3(10.0f));
 
 	lastTime = TimeManager::Instance().GetTime();
 
@@ -1200,7 +1194,6 @@ void applicationLoop() {
 		camera->setCameraTarget(target);
 		camera->setAngleTarget(angleTarget);
 		camera->updateCamera();
-
 
 		glm::mat4 projection = glm::perspective(glm::radians(45.0f),
 			(float)screenWidth / (float)screenHeight, 0.01f, 100.0f);
