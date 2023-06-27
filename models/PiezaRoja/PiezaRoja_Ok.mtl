@@ -1,15 +1,5 @@
-# Blender 3.5.1 MTL File: 'PiezaRoja_Ok.blend'
+# Blender 3.3.0 MTL File: 'PiezaRoja_Ok.blend'
 # www.blender.org
-
-newmtl Material.001
-Ns 250.000000
-Ka 1.000000 1.000000 1.000000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.450000
-d 1.000000
-illum 2
-map_Kd D:/Escritorio/Modelos/Assets/Wood008_2K_Color.jpg
 
 newmtl Rojo
 Ns 250.000000
@@ -19,4 +9,14 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd D:/Escritorio/Modelos/Assets/Wood008_2K_Color.jpg
+map_Kd Wood008_2K_Color.jpg
+
+newmtl Rojo.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Wood008_2K_Color.jpg

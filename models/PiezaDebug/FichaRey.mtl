@@ -1,13 +1,32 @@
-# Blender MTL File: 'PiezasDebug.blend'
-# Material Count: 1
+# Blender 3.3.0 MTL File: 'PiezaRey_OK.blend'
+# www.blender.org
 
-newmtl Piezas
-Ns 359.999993
+newmtl Gold
+Ns 0.000000
 Ka 1.000000 1.000000 1.000000
-Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd E:/GitHub/ProyectoCGA/ProyectoCGA/models/PiezaRey/Metal042B_2K_Color.jpg
+
+newmtl Metal
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd Piezas.png
+map_Kd E:/GitHub/ProyectoCGA/ProyectoCGA/models/PiezaRey/Metal042B_2K_Color.jpg
+
+newmtl Metal.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd E:/GitHub/ProyectoCGA/ProyectoCGA/models/PiezaRey/Metal042B_2K_Color.jpg

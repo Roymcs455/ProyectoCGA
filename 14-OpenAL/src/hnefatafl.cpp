@@ -4,20 +4,8 @@
 
 Hnefatafl::Hnefatafl()
 {
-	for (int i = 0; i < BOARD_SIZE; i++)
-	{
-		tablero.push_back(std::vector<CellState>(BOARD_SIZE, EMPTY));
-	}
-
+	
 	ResetTablero();
-	for (int i = 0; i < BOARD_SIZE; i++)
-	{
-		for (int j = 0; j < BOARD_SIZE; j++)
-		{
-			std::cout << tablero[i][j];
-		}
-		std::cout << std::endl;
-	}
 }
 
 Hnefatafl::~Hnefatafl()
@@ -42,92 +30,90 @@ void Hnefatafl::ResetTablero()
 }
 bool Hnefatafl::MoverFicha(int origenX, int origenY, int destinoX, int destinoY)
 {
-	CellState fichaOrigen = TipoCasilla(origenX, origenY);
-	CellState casillaDestino = TipoCasilla(destinoX, destinoY);
-	int evalX = destinoX - origenX;
-	int evalY= destinoY - origenY;
-	if (fichaOrigen<KING||fichaOrigen>ATTACKER)//Evalúa si no es king(2), defender(3) o attacker (4) la casilla origen
-	{ 
+	CellState origen = TipoCasilla(origenX, origenY);
+	CellState destino = TipoCasilla(destinoX, destinoY);
+	if(origen == EMPTY || origen == INVALID || origen == ESCAPE) //se intenta mover una casilla vacía o inválida
 		return false;
-	}
-	if (fichaOrigen != KING && casillaDestino == ESCAPE) //evalua si se intenta mover ficha que no sea king a escape
+	if (origenX == destinoX && origenY == destinoY) //se intenta dejar en la posición original;
+		return false;
+	if (origenX != destinoX && origenY != destinoY) //se intenta mover de forma que no sea ortogonal
+		return false;
+	if (origen != KING && destino == ESCAPE) // se intenta mover pieza no rey a castillo
+		return false;
+	if (destino != EMPTY)
+		return false;
+	if (origenX == destinoX) //Moviendose en el eje Y;
 	{
-		return false;
+		for (size_t i = 1; i < std::abs(origenY - destinoY); i++)
+		{
+			if (origenY > destinoY)
+			{
+				if (TipoCasilla(origenX, origenY - i) != EMPTY)
+					return false;
+			}
+			if (origenY < destinoY)
+			{
+				if (TipoCasilla(origenX, origenY + i) != EMPTY)
+					return false;
+			}
+		}
 	}
-	else if (casillaDestino != EMPTY) //evalua si la casilla destino no está vacía
+	else if ( origenY == destinoY ) //Moviendose en el eje X;
 	{
-		return false;
+		for (size_t i = 1; i < std::abs(origenX - destinoX); i++)
+		{
+			if (origenX > destinoX)
+			{
+				if (TipoCasilla(origenX - i, origenY ) != EMPTY)
+					return false;
+			}
+			if (origenX < destinoX)
+			{
+				if (TipoCasilla(origenX + i, origenY) != EMPTY)
+					return false;
+			}
+		}
 	}
 	
-	if (evalX == 0)
-	{
-		if (evalY > 0)
-		{
-			for (int i = 1; i < evalY; i++)
-			{
-				if (TipoCasilla(origenX, origenY+i) != EMPTY || (origenX, origenY + i) != ESCAPE)
-				{
-					return false;
-				}
-			}
-		}
-		else
-		{
-			for (int i = 1; i < -evalY; i++)
-			{
-				if (TipoCasilla(origenX, origenY - i) != EMPTY || (origenX, origenY - i) != ESCAPE)
-				{
-					return false;
-				}
-			}
-		}
-	}
-	else if (evalY == 0)
-	{
-		if (evalX > 0)
-		{
-			for (int i = 1; i < evalX; i++)
-			{
-				if (TipoCasilla(origenX + i, origenY ) != EMPTY || (origenX + i, origenY ) != ESCAPE)
-				{
-					return false;
-				}
-			}
-		}
-		else
-		{
-			for (int i = 1; i < -evalY; i++)
-			{
-				if (TipoCasilla(origenX - i, origenY ) != EMPTY || (origenX - i, origenY ) != ESCAPE)
-				{
-					return false;
-				}
-			}
-		}
-	}
-	if (fichaOrigen == KING && casillaDestino == ESCAPE && origenX != 5 && origenY != 5)
-	{
-		victoria = BLANCO;
-		juegoActivo = false;
-
-	}
+	
 	tablero[destinoX][destinoY] = tablero[origenX][origenY];
-	if (origenX == 5 || origenY == 5)
+	if (origenX == 5 && origenY == 5)
 	{
 		tablero[origenX][origenY] = ESCAPE;
+		
 	}
 	else
 	{
 		tablero[origenX][origenY] = EMPTY;
+		
 	}
-	
-	if (CapturarEnCasilla(destinoX, destinoY))
+	/*
+	for (int j = 0; j < BOARD_SIZE; j++)
 	{
-		victoria = NEGRO;
-		juegoActivo = false;
-	}
+		for (int i = 0; i < BOARD_SIZE; i++)
+		{
+			std::cout << " " << tablero[j][i] << " ";
+		}
+		std::cout << std::endl;
+	}*/
+	CapturarEnCasilla(destinoX, destinoY, origen);
 	return true;
 
+
+}
+bool Hnefatafl::EvalFichaRodeada(int x, int y)
+{
+	CellState tipoDeCasilla = TipoCasilla(x, y);
+	if (TipoCasilla(x + 1, y) == EMPTY || (x - 1, y) == EMPTY || (x , y + 1) == EMPTY || (x , y - 1) == EMPTY )
+	{
+		return false; //no está rodeada
+		if (tipoDeCasilla == KING)
+		{
+			if (TipoCasilla(x + 1, y) == ESCAPE || (x - 1, y) == ESCAPE || (x, y + 1) == ESCAPE || (x, y - 1) == ESCAPE )
+				return false;
+		}
+	}
+	return true;
 }
 CellState Hnefatafl::TipoCasilla(int x, int y)
 {
@@ -140,60 +126,69 @@ CellState Hnefatafl::TipoCasilla(int x, int y)
 	return INVALID;
 }
 
-bool Hnefatafl::CapturarEnCasilla(int x, int y)
+Jugadores Hnefatafl::CapturarEnCasilla(int x, int y, CellState turno)
 {
-	CellState fichaCapturadora = TipoCasilla(x,y);
-	
-	if (fichaCapturadora == ATTACKER)
+	if (turno == ATTACKER)
 	{
-		if (TipoCasilla(x + 1, y) == (DEFENDER||KING))
+		if (TipoCasilla(x + 1, y) == DEFENDER && (TipoCasilla(x + 2, y) == ESCAPE || TipoCasilla(x + 2, y) == ATTACKER) )
 		{
-			if (TipoCasilla(x + 2, y) == (ATTACKER || INVALID || ESCAPE) )
-			{
-				tablero[x + 1][y] = EMPTY;
-			}
+			tablero[x + 1][y] = EMPTY;
+			piezasBlancas--;
 		}
-		if (TipoCasilla(x - 1, y) == (DEFENDER || KING))
+		if (TipoCasilla(x - 1, y) == DEFENDER && (TipoCasilla(x - 2, y) == ESCAPE || TipoCasilla(x - 2, y) == ATTACKER) )
 		{
-			if (TipoCasilla(x - 2, y) == (ATTACKER || INVALID || ESCAPE) )
-			{
-				tablero[x - 1][y] = EMPTY;
-			}
+			tablero[x - 1][y] = EMPTY;
+			piezasBlancas--;
 		}
-		if (TipoCasilla(x, y - 1) == (DEFENDER || KING))
+		if (TipoCasilla(x, y + 1) == DEFENDER && (TipoCasilla(x, y + 2) == ESCAPE || TipoCasilla(x, y + 2) == ATTACKER))
 		{
-			if (TipoCasilla(x, y - 2) == (ATTACKER || INVALID || ESCAPE) )
-			{
-				tablero[x][y - 1] = EMPTY;
-			}
+			tablero[x][y + 1] = EMPTY;
+			piezasBlancas--;
 		}
-		if (TipoCasilla(x, y + 1) == (DEFENDER || KING))
+		if (TipoCasilla(x, y - 1) == DEFENDER && (TipoCasilla(x, y - 2) == ESCAPE || TipoCasilla(x, y - 2) == ATTACKER))
 		{
-			if (TipoCasilla(x, y + 2) == (ATTACKER || INVALID || ESCAPE) )
-			{
-				tablero[x][y + 1] = EMPTY;
-			}
+			tablero[x][y - 1] = EMPTY;
+			piezasBlancas--;
+		}
+
+		if (TipoCasilla(x + 1, y) == KING && (TipoCasilla(x + 2, y) == ESCAPE || TipoCasilla(x + 2, y) == ATTACKER))
+		{
+			return NEGRO; //Gana el jugador negro
+		}
+		if (TipoCasilla(x - 1, y) == KING && (TipoCasilla(x - 2, y) == ESCAPE || TipoCasilla(x - 2, y) == ATTACKER))
+		{
+			return NEGRO;
+		}
+		if (TipoCasilla(x, y + 1) == KING && (TipoCasilla(x, y + 2) == ESCAPE || TipoCasilla(x, y + 2) == ATTACKER))
+		{
+			return NEGRO;
+		}
+		if (TipoCasilla(x, y - 1) == KING && (TipoCasilla(x, y - 2) == ESCAPE || TipoCasilla(x, y - 2) == ATTACKER))
+		{
+			return NEGRO;
 		}
 	}
-	else
+	else //Turno == DEFENDER
 	{
-
+		if (TipoCasilla(x + 1, y) == ATTACKER && (TipoCasilla(x + 2, y) == ESCAPE || TipoCasilla(x + 2, y) == DEFENDER))
+		{
+			tablero[x + 1][y] = EMPTY;
+			piezasNegras--;
+		}
+		if (TipoCasilla(x - 1, y) == ATTACKER && (TipoCasilla(x - 2, y) == ESCAPE || TipoCasilla(x - 2, y) == DEFENDER))
+		{
+			tablero[x - 1][y] = EMPTY;
+			piezasNegras--;
+		}
+		if (TipoCasilla(x, y + 1) == ATTACKER && (TipoCasilla(x, y + 2) == ESCAPE || TipoCasilla(x, y + 2) == DEFENDER))
+		{
+			tablero[x][y + 1] = EMPTY;
+			piezasNegras--;
+		}
+		if (TipoCasilla(x, y - 1) == ATTACKER && (TipoCasilla(x, y - 2) == ESCAPE || TipoCasilla(x, y - 2) == DEFENDER))
+		{
+			tablero[x][y - 1] = EMPTY;
+			piezasNegras--;
+		}
 	}
-
-}
-
-void Hnefatafl::CambiarJugadorActual()
-{
-	if (jugadorActual == NEGRO)
-	{
-		jugadorActual = BLANCO;
-	}
-	else
-	{
-		jugadorActual = NEGRO;
-	}
-}
-void Hnefatafl::EmpezarJuego()
-{
-
 }
