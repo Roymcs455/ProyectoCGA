@@ -1,633 +1,431 @@
 ﻿  Bones.cpp
-d:\repos\proyectocga\cgalib\include\headers\bones.h(111): warning C4251: 'Bones::m_BoneMapping': class 'std::map<std::string,unsigned int,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
-          with
-          [
-              _Kty=std::string,
-              _Ty=unsigned int
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\bones.h(111): note: vea la declaración de 'std::map<std::string,unsigned int,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
-          with
-          [
-              _Kty=std::string,
-              _Ty=unsigned int
-          ]
-d:\repos\proyectocga\cgalib\include\headers\bones.h(112): warning C4251: 'Bones::m_BoneInfo': class 'std::vector<Bones::BoneInfo,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
-          with
-          [
-              _Ty=Bones::BoneInfo
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\bones.h(112): note: vea la declaración de 'std::vector<Bones::BoneInfo,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=Bones::BoneInfo
-          ]
-d:\repos\proyectocga\cgalib\include\headers\bones.h(113): warning C4251: 'Bones::bones': class 'std::vector<Bones::VertexBoneData,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
-          with
-          [
-              _Ty=Bones::VertexBoneData
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\bones.h(113): note: vea la declaración de 'std::vector<Bones::VertexBoneData,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=Bones::VertexBoneData
-          ]
-d:\repos\proyectocga\cgalib\src\bones.cpp(88): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Bones.h(111,38): warning C4251: 'Bones::m_BoneMapping': class 'std::map<std::string,unsigned int,std::less<std::string>,std::allocator<std::pair<const std::string,unsigned int>>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Bones.h(111): message : vea la declaración de 'std::map<std::string,unsigned int,std::less<std::string>,std::allocator<std::pair<const std::string,unsigned int>>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Bones.h(112,24): warning C4251: 'Bones::m_BoneInfo': class 'std::vector<Bones::BoneInfo,std::allocator<Bones::BoneInfo>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Bones.h(112): message : vea la declaración de 'std::vector<Bones::BoneInfo,std::allocator<Bones::BoneInfo>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Bones.h(113,30): warning C4251: 'Bones::bones': class 'std::vector<Bones::VertexBoneData,std::allocator<Bones::VertexBoneData>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Bones.h(113): message : vea la declaración de 'std::vector<Bones::VertexBoneData,std::allocator<Bones::VertexBoneData>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\Bones.cpp(88,29): warning C4018: '<': no coinciden signed/unsigned
   Box.cpp
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(264): warning C4251: 'AbstractModel::position': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(265): warning C4251: 'AbstractModel::scale': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(266): warning C4251: 'AbstractModel::color': struct 'glm::vec<4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(419): note: vea la declaración de 'glm::vec<4,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(267): warning C4251: 'AbstractModel::orientation': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(269): warning C4251: 'AbstractModel::vertexArray': class 'std::vector<AbstractModel::Vertex,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-          with
-          [
-              _Ty=AbstractModel::Vertex
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(245): note: vea la declaración de 'std::vector<AbstractModel::Vertex,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=AbstractModel::Vertex
-          ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(270): warning C4251: 'AbstractModel::index': class 'std::vector<GLuint,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-          with
-          [
-              _Ty=GLuint
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(270): note: vea la declaración de 'std::vector<GLuint,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=GLuint
-          ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(271): warning C4251: 'AbstractModel::aabb': class 'AbstractModel::AABB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(65): note: vea la declaración de 'AbstractModel::AABB'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(272): warning C4251: 'AbstractModel::sbb': class 'AbstractModel::SBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(51): note: vea la declaración de 'AbstractModel::SBB'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(273): warning C4251: 'AbstractModel::obb': class 'AbstractModel::OBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(94): note: vea la declaración de 'AbstractModel::OBB'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(75): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(264,12): warning C4251: 'AbstractModel::position': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(265,12): warning C4251: 'AbstractModel::scale': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(266,12): warning C4251: 'AbstractModel::color': struct 'glm::vec<4,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(419): message : vea la declaración de 'glm::vec<4,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(267,12): warning C4251: 'AbstractModel::orientation': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(269,22): warning C4251: 'AbstractModel::vertexArray': class 'std::vector<AbstractModel::Vertex,std::allocator<AbstractModel::Vertex>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(245): message : vea la declaración de 'std::vector<AbstractModel::Vertex,std::allocator<AbstractModel::Vertex>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(270,22): warning C4251: 'AbstractModel::index': class 'std::vector<GLuint,std::allocator<GLuint>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(270): message : vea la declaración de 'std::vector<GLuint,std::allocator<GLuint>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(271,7): warning C4251: 'AbstractModel::aabb': class 'AbstractModel::AABB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(65): message : vea la declaración de 'AbstractModel::AABB'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(272,6): warning C4251: 'AbstractModel::sbb': class 'AbstractModel::SBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(51): message : vea la declaración de 'AbstractModel::SBB'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(273,6): warning C4251: 'AbstractModel::obb': class 'AbstractModel::OBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(94): message : vea la declaración de 'AbstractModel::OBB'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(75,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(76): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(76,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(77): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(77,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(78): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(78,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(79): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(79,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(80): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(80,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\box.h(37): warning C4251: 'Box::aabb': class 'AbstractModel::AABB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Box'
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(65): note: vea la declaración de 'AbstractModel::AABB'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Box.h(37,7): warning C4251: 'Box::aabb': class 'AbstractModel::AABB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Box'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(65): message : vea la declaración de 'AbstractModel::AABB'
   Cylinder.cpp
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(264): warning C4251: 'AbstractModel::position': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(265): warning C4251: 'AbstractModel::scale': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(266): warning C4251: 'AbstractModel::color': struct 'glm::vec<4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(419): note: vea la declaración de 'glm::vec<4,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(267): warning C4251: 'AbstractModel::orientation': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(269): warning C4251: 'AbstractModel::vertexArray': class 'std::vector<AbstractModel::Vertex,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-          with
-          [
-              _Ty=AbstractModel::Vertex
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(245): note: vea la declaración de 'std::vector<AbstractModel::Vertex,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=AbstractModel::Vertex
-          ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(270): warning C4251: 'AbstractModel::index': class 'std::vector<GLuint,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-          with
-          [
-              _Ty=GLuint
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(270): note: vea la declaración de 'std::vector<GLuint,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=GLuint
-          ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(271): warning C4251: 'AbstractModel::aabb': class 'AbstractModel::AABB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(65): note: vea la declaración de 'AbstractModel::AABB'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(272): warning C4251: 'AbstractModel::sbb': class 'AbstractModel::SBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(51): note: vea la declaración de 'AbstractModel::SBB'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(273): warning C4251: 'AbstractModel::obb': class 'AbstractModel::OBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(94): note: vea la declaración de 'AbstractModel::OBB'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(75): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(264,12): warning C4251: 'AbstractModel::position': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(265,12): warning C4251: 'AbstractModel::scale': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(266,12): warning C4251: 'AbstractModel::color': struct 'glm::vec<4,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(419): message : vea la declaración de 'glm::vec<4,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(267,12): warning C4251: 'AbstractModel::orientation': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(269,22): warning C4251: 'AbstractModel::vertexArray': class 'std::vector<AbstractModel::Vertex,std::allocator<AbstractModel::Vertex>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(245): message : vea la declaración de 'std::vector<AbstractModel::Vertex,std::allocator<AbstractModel::Vertex>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(270,22): warning C4251: 'AbstractModel::index': class 'std::vector<GLuint,std::allocator<GLuint>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(270): message : vea la declaración de 'std::vector<GLuint,std::allocator<GLuint>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(271,7): warning C4251: 'AbstractModel::aabb': class 'AbstractModel::AABB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(65): message : vea la declaración de 'AbstractModel::AABB'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(272,6): warning C4251: 'AbstractModel::sbb': class 'AbstractModel::SBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(51): message : vea la declaración de 'AbstractModel::SBB'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(273,6): warning C4251: 'AbstractModel::obb': class 'AbstractModel::OBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(94): message : vea la declaración de 'AbstractModel::OBB'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(75,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(76): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(76,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(77): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(77,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(78): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(78,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(79): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(79,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(80): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(80,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\src\cylinder.cpp(33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-d:\repos\proyectocga\cgalib\src\cylinder.cpp(34): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-d:\repos\proyectocga\cgalib\src\cylinder.cpp(44): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-d:\repos\proyectocga\cgalib\src\cylinder.cpp(45): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\Cylinder.cpp(33,11): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\Cylinder.cpp(34,11): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\Cylinder.cpp(44,11): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\Cylinder.cpp(45,11): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
   FirstPersonCamera.cpp
-d:\repos\proyectocga\cgalib\include\headers\camera.h(111): warning C4251: 'Camera::position': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\camera.h(112): warning C4251: 'Camera::front': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\camera.h(113): warning C4251: 'Camera::up': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\camera.h(114): warning C4251: 'Camera::right': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\camera.h(115): warning C4251: 'Camera::worldUp': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\camera.h(117): warning C4251: 'Camera::cameraTarget': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Camera.h(111,12): warning C4251: 'Camera::position': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Camera.h(112,12): warning C4251: 'Camera::front': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Camera.h(113,12): warning C4251: 'Camera::up': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Camera.h(114,12): warning C4251: 'Camera::right': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Camera.h(115,12): warning C4251: 'Camera::worldUp': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Camera.h(117,12): warning C4251: 'Camera::cameraTarget': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
   FontTypeRendering.cpp
-d:\repos\proyectocga\cgalib\src\fonttyperendering.cpp(134): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\FontTypeRendering.cpp(128,49): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\FontTypeRendering.cpp(134,39): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\FontTypeRendering.cpp(134,31): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
   Mesh.cpp
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(264): warning C4251: 'AbstractModel::position': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(265): warning C4251: 'AbstractModel::scale': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(266): warning C4251: 'AbstractModel::color': struct 'glm::vec<4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(419): note: vea la declaración de 'glm::vec<4,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(267): warning C4251: 'AbstractModel::orientation': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(269): warning C4251: 'AbstractModel::vertexArray': class 'std::vector<AbstractModel::Vertex,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-          with
-          [
-              _Ty=AbstractModel::Vertex
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(245): note: vea la declaración de 'std::vector<AbstractModel::Vertex,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=AbstractModel::Vertex
-          ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(270): warning C4251: 'AbstractModel::index': class 'std::vector<GLuint,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-          with
-          [
-              _Ty=GLuint
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(270): note: vea la declaración de 'std::vector<GLuint,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=GLuint
-          ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(271): warning C4251: 'AbstractModel::aabb': class 'AbstractModel::AABB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(65): note: vea la declaración de 'AbstractModel::AABB'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(272): warning C4251: 'AbstractModel::sbb': class 'AbstractModel::SBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(51): note: vea la declaración de 'AbstractModel::SBB'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(273): warning C4251: 'AbstractModel::obb': class 'AbstractModel::OBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(94): note: vea la declaración de 'AbstractModel::OBB'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(75): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(264,12): warning C4251: 'AbstractModel::position': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(265,12): warning C4251: 'AbstractModel::scale': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(266,12): warning C4251: 'AbstractModel::color': struct 'glm::vec<4,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(419): message : vea la declaración de 'glm::vec<4,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(267,12): warning C4251: 'AbstractModel::orientation': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(269,22): warning C4251: 'AbstractModel::vertexArray': class 'std::vector<AbstractModel::Vertex,std::allocator<AbstractModel::Vertex>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(245): message : vea la declaración de 'std::vector<AbstractModel::Vertex,std::allocator<AbstractModel::Vertex>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(270,22): warning C4251: 'AbstractModel::index': class 'std::vector<GLuint,std::allocator<GLuint>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(270): message : vea la declaración de 'std::vector<GLuint,std::allocator<GLuint>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(271,7): warning C4251: 'AbstractModel::aabb': class 'AbstractModel::AABB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(65): message : vea la declaración de 'AbstractModel::AABB'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(272,6): warning C4251: 'AbstractModel::sbb': class 'AbstractModel::SBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(51): message : vea la declaración de 'AbstractModel::SBB'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(273,6): warning C4251: 'AbstractModel::obb': class 'AbstractModel::OBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(94): message : vea la declaración de 'AbstractModel::OBB'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(75,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(76): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(76,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(77): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(77,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(78): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(78,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(79): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(79,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(80): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(80,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\texture.h(66): warning C4251: 'Texture::m_fileName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Texture'
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xstring(4373): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-d:\repos\proyectocga\cgalib\include\headers\texture.h(69): warning C4251: 'Texture::type': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Texture'
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xstring(4373): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-d:\repos\proyectocga\cgalib\include\headers\bones.h(111): warning C4251: 'Bones::m_BoneMapping': class 'std::map<std::string,unsigned int,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
-          with
-          [
-              _Kty=std::string,
-              _Ty=unsigned int
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\bones.h(111): note: vea la declaración de 'std::map<std::string,unsigned int,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
-          with
-          [
-              _Kty=std::string,
-              _Ty=unsigned int
-          ]
-d:\repos\proyectocga\cgalib\include\headers\bones.h(112): warning C4251: 'Bones::m_BoneInfo': class 'std::vector<Bones::BoneInfo,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
-          with
-          [
-              _Ty=Bones::BoneInfo
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\bones.h(112): note: vea la declaración de 'std::vector<Bones::BoneInfo,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=Bones::BoneInfo
-          ]
-d:\repos\proyectocga\cgalib\include\headers\bones.h(113): warning C4251: 'Bones::bones': class 'std::vector<Bones::VertexBoneData,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
-          with
-          [
-              _Ty=Bones::VertexBoneData
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\bones.h(113): note: vea la declaración de 'std::vector<Bones::VertexBoneData,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=Bones::VertexBoneData
-          ]
-d:\repos\proyectocga\cgalib\include\headers\mesh.h(54): warning C4251: 'Mesh::textures': class 'std::vector<Texture *,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Mesh'
-          with
-          [
-              _Ty=Texture *
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\mesh.h(54): note: vea la declaración de 'std::vector<Texture *,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=Texture *
-          ]
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Texture.h(66,14): warning C4251: 'Texture::m_fileName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Texture'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xstring(4871): message : vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Texture.h(69,14): warning C4251: 'Texture::type': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Texture'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xstring(4871): message : vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Bones.h(111,38): warning C4251: 'Bones::m_BoneMapping': class 'std::map<std::string,unsigned int,std::less<std::string>,std::allocator<std::pair<const std::string,unsigned int>>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Bones.h(111): message : vea la declaración de 'std::map<std::string,unsigned int,std::less<std::string>,std::allocator<std::pair<const std::string,unsigned int>>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Bones.h(112,24): warning C4251: 'Bones::m_BoneInfo': class 'std::vector<Bones::BoneInfo,std::allocator<Bones::BoneInfo>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Bones.h(112): message : vea la declaración de 'std::vector<Bones::BoneInfo,std::allocator<Bones::BoneInfo>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Bones.h(113,30): warning C4251: 'Bones::bones': class 'std::vector<Bones::VertexBoneData,std::allocator<Bones::VertexBoneData>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Bones.h(113): message : vea la declaración de 'std::vector<Bones::VertexBoneData,std::allocator<Bones::VertexBoneData>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Mesh.h(54,24): warning C4251: 'Mesh::textures': class 'std::vector<Texture *,std::allocator<Texture *>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Mesh'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Mesh.h(54): message : vea la declaración de 'std::vector<Texture *,std::allocator<Texture *>>'
   Model.cpp
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(264): warning C4251: 'AbstractModel::position': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(265): warning C4251: 'AbstractModel::scale': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(266): warning C4251: 'AbstractModel::color': struct 'glm::vec<4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(419): note: vea la declaración de 'glm::vec<4,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(267): warning C4251: 'AbstractModel::orientation': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(269): warning C4251: 'AbstractModel::vertexArray': class 'std::vector<AbstractModel::Vertex,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-          with
-          [
-              _Ty=AbstractModel::Vertex
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(245): note: vea la declaración de 'std::vector<AbstractModel::Vertex,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=AbstractModel::Vertex
-          ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(270): warning C4251: 'AbstractModel::index': class 'std::vector<GLuint,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-          with
-          [
-              _Ty=GLuint
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(270): note: vea la declaración de 'std::vector<GLuint,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=GLuint
-          ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(271): warning C4251: 'AbstractModel::aabb': class 'AbstractModel::AABB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(65): note: vea la declaración de 'AbstractModel::AABB'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(272): warning C4251: 'AbstractModel::sbb': class 'AbstractModel::SBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(51): note: vea la declaración de 'AbstractModel::SBB'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(273): warning C4251: 'AbstractModel::obb': class 'AbstractModel::OBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(94): note: vea la declaración de 'AbstractModel::OBB'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(75): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(264,12): warning C4251: 'AbstractModel::position': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(265,12): warning C4251: 'AbstractModel::scale': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(266,12): warning C4251: 'AbstractModel::color': struct 'glm::vec<4,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(419): message : vea la declaración de 'glm::vec<4,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(267,12): warning C4251: 'AbstractModel::orientation': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(269,22): warning C4251: 'AbstractModel::vertexArray': class 'std::vector<AbstractModel::Vertex,std::allocator<AbstractModel::Vertex>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(245): message : vea la declaración de 'std::vector<AbstractModel::Vertex,std::allocator<AbstractModel::Vertex>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(270,22): warning C4251: 'AbstractModel::index': class 'std::vector<GLuint,std::allocator<GLuint>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(270): message : vea la declaración de 'std::vector<GLuint,std::allocator<GLuint>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(271,7): warning C4251: 'AbstractModel::aabb': class 'AbstractModel::AABB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(65): message : vea la declaración de 'AbstractModel::AABB'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(272,6): warning C4251: 'AbstractModel::sbb': class 'AbstractModel::SBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(51): message : vea la declaración de 'AbstractModel::SBB'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(273,6): warning C4251: 'AbstractModel::obb': class 'AbstractModel::OBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(94): message : vea la declaración de 'AbstractModel::OBB'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(75,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(76): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(76,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(77): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(77,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(78): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(78,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(79): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(79,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(80): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(80,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\texture.h(66): warning C4251: 'Texture::m_fileName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Texture'
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xstring(4373): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-d:\repos\proyectocga\cgalib\include\headers\texture.h(69): warning C4251: 'Texture::type': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Texture'
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xstring(4373): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-d:\repos\proyectocga\cgalib\include\headers\bones.h(111): warning C4251: 'Bones::m_BoneMapping': class 'std::map<std::string,unsigned int,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
-          with
-          [
-              _Kty=std::string,
-              _Ty=unsigned int
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\bones.h(111): note: vea la declaración de 'std::map<std::string,unsigned int,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
-          with
-          [
-              _Kty=std::string,
-              _Ty=unsigned int
-          ]
-d:\repos\proyectocga\cgalib\include\headers\bones.h(112): warning C4251: 'Bones::m_BoneInfo': class 'std::vector<Bones::BoneInfo,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
-          with
-          [
-              _Ty=Bones::BoneInfo
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\bones.h(112): note: vea la declaración de 'std::vector<Bones::BoneInfo,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=Bones::BoneInfo
-          ]
-d:\repos\proyectocga\cgalib\include\headers\bones.h(113): warning C4251: 'Bones::bones': class 'std::vector<Bones::VertexBoneData,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
-          with
-          [
-              _Ty=Bones::VertexBoneData
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\bones.h(113): note: vea la declaración de 'std::vector<Bones::VertexBoneData,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=Bones::VertexBoneData
-          ]
-d:\repos\proyectocga\cgalib\include\headers\mesh.h(54): warning C4251: 'Mesh::textures': class 'std::vector<Texture *,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Mesh'
-          with
-          [
-              _Ty=Texture *
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\mesh.h(54): note: vea la declaración de 'std::vector<Texture *,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=Texture *
-          ]
-d:\repos\proyectocga\cgalib\include\headers\model.h(66): warning C4251: 'Model::meshes': class 'std::vector<Mesh *,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Model'
-          with
-          [
-              _Ty=Mesh *
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\model.h(50): note: vea la declaración de 'std::vector<Mesh *,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=Mesh *
-          ]
-d:\repos\proyectocga\cgalib\include\headers\model.h(67): warning C4251: 'Model::textureLoaded': class 'std::vector<Texture *,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Model'
-          with
-          [
-              _Ty=Texture *
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\mesh.h(54): note: vea la declaración de 'std::vector<Texture *,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=Texture *
-          ]
-d:\repos\proyectocga\cgalib\include\headers\model.h(68): warning C4251: 'Model::directory': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Model'
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xstring(4373): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-d:\repos\proyectocga\cgalib\include\headers\model.h(70): warning C4251: 'Model::m_GlobalInverseTransform': struct 'glm::mat<4,4,glm::f32,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Model'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(518): note: vea la declaración de 'glm::mat<4,4,glm::f32,0>'
-d:\repos\proyectocga\cgalib\include\headers\model.h(72): warning C4251: 'Model::importer': class 'Assimp::Importer' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Model'
-  d:\repos\proyectocga\external\assimp\include\assimp\importer.hpp(115): note: vea la declaración de 'Assimp::Importer'
-d:\repos\proyectocga\cgalib\src\model.cpp(27): warning C4018: '<': no coinciden signed/unsigned
-d:\repos\proyectocga\cgalib\src\model.cpp(32): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Texture.h(66,14): warning C4251: 'Texture::m_fileName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Texture'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xstring(4871): message : vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Texture.h(69,14): warning C4251: 'Texture::type': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Texture'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xstring(4871): message : vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Bones.h(111,38): warning C4251: 'Bones::m_BoneMapping': class 'std::map<std::string,unsigned int,std::less<std::string>,std::allocator<std::pair<const std::string,unsigned int>>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Bones.h(111): message : vea la declaración de 'std::map<std::string,unsigned int,std::less<std::string>,std::allocator<std::pair<const std::string,unsigned int>>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Bones.h(112,24): warning C4251: 'Bones::m_BoneInfo': class 'std::vector<Bones::BoneInfo,std::allocator<Bones::BoneInfo>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Bones.h(112): message : vea la declaración de 'std::vector<Bones::BoneInfo,std::allocator<Bones::BoneInfo>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Bones.h(113,30): warning C4251: 'Bones::bones': class 'std::vector<Bones::VertexBoneData,std::allocator<Bones::VertexBoneData>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Bones.h(113): message : vea la declaración de 'std::vector<Bones::VertexBoneData,std::allocator<Bones::VertexBoneData>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Mesh.h(54,24): warning C4251: 'Mesh::textures': class 'std::vector<Texture *,std::allocator<Texture *>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Mesh'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Mesh.h(54): message : vea la declaración de 'std::vector<Texture *,std::allocator<Texture *>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Model.h(66,21): warning C4251: 'Model::meshes': class 'std::vector<Mesh *,std::allocator<Mesh *>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Model'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Model.h(50): message : vea la declaración de 'std::vector<Mesh *,std::allocator<Mesh *>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Model.h(67,24): warning C4251: 'Model::textureLoaded': class 'std::vector<Texture *,std::allocator<Texture *>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Model'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Mesh.h(54): message : vea la declaración de 'std::vector<Texture *,std::allocator<Texture *>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Model.h(68,14): warning C4251: 'Model::directory': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Model'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xstring(4871): message : vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Model.h(70,12): warning C4251: 'Model::m_GlobalInverseTransform': struct 'glm::mat<4,4,glm::f32,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Model'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(518): message : vea la declaración de 'glm::mat<4,4,glm::f32,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Model.h(72,19): warning C4251: 'Model::importer': class 'Assimp::Importer' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Model'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\assimp\include\assimp\Importer.hpp(115): message : vea la declaración de 'Assimp::Importer'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\Model.cpp(27,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\Model.cpp(32,20): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\Model.cpp(92,55): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
   Shader.cpp
   ShadowBox.cpp
-d:\repos\proyectocga\cgalib\include\headers\camera.h(111): warning C4251: 'Camera::position': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\camera.h(112): warning C4251: 'Camera::front': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\camera.h(113): warning C4251: 'Camera::up': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\camera.h(114): warning C4251: 'Camera::right': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\camera.h(115): warning C4251: 'Camera::worldUp': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\camera.h(117): warning C4251: 'Camera::cameraTarget': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\shadowbox.h(40): warning C4251: 'ShadowBox::front': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'ShadowBox'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\shadowbox.h(41): warning C4251: 'ShadowBox::up': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'ShadowBox'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\shadowbox.h(42): warning C4251: 'ShadowBox::right': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'ShadowBox'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\shadowbox.h(43): warning C4251: 'ShadowBox::mins': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'ShadowBox'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\shadowbox.h(44): warning C4251: 'ShadowBox::maxs': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'ShadowBox'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\src\shadowbox.cpp(14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-d:\repos\proyectocga\cgalib\src\shadowbox.cpp(15): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-d:\repos\proyectocga\cgalib\src\shadowbox.cpp(16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-d:\repos\proyectocga\cgalib\src\shadowbox.cpp(17): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Camera.h(111,12): warning C4251: 'Camera::position': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Camera.h(112,12): warning C4251: 'Camera::front': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Camera.h(113,12): warning C4251: 'Camera::up': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Camera.h(114,12): warning C4251: 'Camera::right': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Camera.h(115,12): warning C4251: 'Camera::worldUp': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Camera.h(117,12): warning C4251: 'Camera::cameraTarget': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\ShadowBox.h(40,11): warning C4251: 'ShadowBox::front': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'ShadowBox'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\ShadowBox.h(41,11): warning C4251: 'ShadowBox::up': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'ShadowBox'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\ShadowBox.h(42,11): warning C4251: 'ShadowBox::right': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'ShadowBox'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\ShadowBox.h(43,11): warning C4251: 'ShadowBox::mins': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'ShadowBox'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\ShadowBox.h(44,11): warning C4251: 'ShadowBox::maxs': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'ShadowBox'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\ShadowBox.cpp(14,19): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\ShadowBox.cpp(15,18): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\ShadowBox.cpp(16,18): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\ShadowBox.cpp(17,17): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
   Sphere.cpp
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(264): warning C4251: 'AbstractModel::position': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(265): warning C4251: 'AbstractModel::scale': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(266): warning C4251: 'AbstractModel::color': struct 'glm::vec<4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(419): note: vea la declaración de 'glm::vec<4,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(267): warning C4251: 'AbstractModel::orientation': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(269): warning C4251: 'AbstractModel::vertexArray': class 'std::vector<AbstractModel::Vertex,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-          with
-          [
-              _Ty=AbstractModel::Vertex
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(245): note: vea la declaración de 'std::vector<AbstractModel::Vertex,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=AbstractModel::Vertex
-          ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(270): warning C4251: 'AbstractModel::index': class 'std::vector<GLuint,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-          with
-          [
-              _Ty=GLuint
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(270): note: vea la declaración de 'std::vector<GLuint,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=GLuint
-          ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(271): warning C4251: 'AbstractModel::aabb': class 'AbstractModel::AABB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(65): note: vea la declaración de 'AbstractModel::AABB'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(272): warning C4251: 'AbstractModel::sbb': class 'AbstractModel::SBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(51): note: vea la declaración de 'AbstractModel::SBB'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(273): warning C4251: 'AbstractModel::obb': class 'AbstractModel::OBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(94): note: vea la declaración de 'AbstractModel::OBB'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(75): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(264,12): warning C4251: 'AbstractModel::position': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(265,12): warning C4251: 'AbstractModel::scale': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(266,12): warning C4251: 'AbstractModel::color': struct 'glm::vec<4,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(419): message : vea la declaración de 'glm::vec<4,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(267,12): warning C4251: 'AbstractModel::orientation': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(269,22): warning C4251: 'AbstractModel::vertexArray': class 'std::vector<AbstractModel::Vertex,std::allocator<AbstractModel::Vertex>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(245): message : vea la declaración de 'std::vector<AbstractModel::Vertex,std::allocator<AbstractModel::Vertex>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(270,22): warning C4251: 'AbstractModel::index': class 'std::vector<GLuint,std::allocator<GLuint>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(270): message : vea la declaración de 'std::vector<GLuint,std::allocator<GLuint>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(271,7): warning C4251: 'AbstractModel::aabb': class 'AbstractModel::AABB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(65): message : vea la declaración de 'AbstractModel::AABB'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(272,6): warning C4251: 'AbstractModel::sbb': class 'AbstractModel::SBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(51): message : vea la declaración de 'AbstractModel::SBB'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(273,6): warning C4251: 'AbstractModel::obb': class 'AbstractModel::OBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(94): message : vea la declaración de 'AbstractModel::OBB'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(75,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(76): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(76,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(77): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(77,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(78): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(78,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(79): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(79,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(80): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(80,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\sphere.h(39): warning C4251: 'Sphere::sbb': class 'AbstractModel::SBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Sphere'
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(51): note: vea la declaración de 'AbstractModel::SBB'
-d:\repos\proyectocga\cgalib\src\sphere.cpp(8): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-d:\repos\proyectocga\cgalib\src\sphere.cpp(12): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Sphere.h(39,6): warning C4251: 'Sphere::sbb': class 'AbstractModel::SBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Sphere'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(51): message : vea la declaración de 'AbstractModel::SBB'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\Sphere.cpp(8,13): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\Sphere.cpp(12,16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
   Terrain.cpp
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(264): warning C4251: 'AbstractModel::position': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(265): warning C4251: 'AbstractModel::scale': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(266): warning C4251: 'AbstractModel::color': struct 'glm::vec<4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(419): note: vea la declaración de 'glm::vec<4,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(267): warning C4251: 'AbstractModel::orientation': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(269): warning C4251: 'AbstractModel::vertexArray': class 'std::vector<AbstractModel::Vertex,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-          with
-          [
-              _Ty=AbstractModel::Vertex
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(245): note: vea la declaración de 'std::vector<AbstractModel::Vertex,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=AbstractModel::Vertex
-          ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(270): warning C4251: 'AbstractModel::index': class 'std::vector<GLuint,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-          with
-          [
-              _Ty=GLuint
-          ]
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(270): note: vea la declaración de 'std::vector<GLuint,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=GLuint
-          ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(271): warning C4251: 'AbstractModel::aabb': class 'AbstractModel::AABB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(65): note: vea la declaración de 'AbstractModel::AABB'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(272): warning C4251: 'AbstractModel::sbb': class 'AbstractModel::SBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(51): note: vea la declaración de 'AbstractModel::SBB'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(273): warning C4251: 'AbstractModel::obb': class 'AbstractModel::OBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(94): note: vea la declaración de 'AbstractModel::OBB'
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(75): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(264,12): warning C4251: 'AbstractModel::position': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(265,12): warning C4251: 'AbstractModel::scale': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(266,12): warning C4251: 'AbstractModel::color': struct 'glm::vec<4,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(419): message : vea la declaración de 'glm::vec<4,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(267,12): warning C4251: 'AbstractModel::orientation': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(269,22): warning C4251: 'AbstractModel::vertexArray': class 'std::vector<AbstractModel::Vertex,std::allocator<AbstractModel::Vertex>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(245): message : vea la declaración de 'std::vector<AbstractModel::Vertex,std::allocator<AbstractModel::Vertex>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(270,22): warning C4251: 'AbstractModel::index': class 'std::vector<GLuint,std::allocator<GLuint>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(270): message : vea la declaración de 'std::vector<GLuint,std::allocator<GLuint>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(271,7): warning C4251: 'AbstractModel::aabb': class 'AbstractModel::AABB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(65): message : vea la declaración de 'AbstractModel::AABB'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(272,6): warning C4251: 'AbstractModel::sbb': class 'AbstractModel::SBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(51): message : vea la declaración de 'AbstractModel::SBB'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(273,6): warning C4251: 'AbstractModel::obb': class 'AbstractModel::OBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(94): message : vea la declaración de 'AbstractModel::OBB'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(75,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(76): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(76,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(77): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(77,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(78): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(78,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(79): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(79,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(80): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\AbstractModel.h(80,17): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-d:\repos\proyectocga\cgalib\include\headers\texture.h(66): warning C4251: 'Texture::m_fileName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Texture'
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xstring(4373): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-d:\repos\proyectocga\cgalib\include\headers\texture.h(69): warning C4251: 'Texture::type': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Texture'
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xstring(4373): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-d:\repos\proyectocga\cgalib\include\headers\terrain.h(50): warning C4251: 'Terrain::heightMap': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Terrain'
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xstring(4373): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-d:\repos\proyectocga\cgalib\src\terrain.cpp(113): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-d:\repos\proyectocga\cgalib\src\terrain.cpp(114): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-d:\repos\proyectocga\cgalib\src\terrain.cpp(139): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-d:\repos\proyectocga\cgalib\src\terrain.cpp(140): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Texture.h(66,14): warning C4251: 'Texture::m_fileName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Texture'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xstring(4871): message : vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Texture.h(69,14): warning C4251: 'Texture::type': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Texture'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xstring(4871): message : vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Terrain.h(50,14): warning C4251: 'Terrain::heightMap': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Terrain'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xstring(4871): message : vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\Terrain.cpp(113,12): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\Terrain.cpp(114,12): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\Terrain.cpp(139,12): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\Terrain.cpp(140,12): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
   Texture.cpp
-d:\repos\proyectocga\cgalib\include\headers\texture.h(66): warning C4251: 'Texture::m_fileName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Texture'
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xstring(4373): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-d:\repos\proyectocga\cgalib\include\headers\texture.h(69): warning C4251: 'Texture::type': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Texture'
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xstring(4373): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Texture.h(66,14): warning C4251: 'Texture::m_fileName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Texture'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xstring(4871): message : vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Texture.h(69,14): warning C4251: 'Texture::type': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Texture'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xstring(4871): message : vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
   ThirdPersonCamera.cpp
-d:\repos\proyectocga\cgalib\include\headers\camera.h(111): warning C4251: 'Camera::position': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\camera.h(112): warning C4251: 'Camera::front': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\camera.h(113): warning C4251: 'Camera::up': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\camera.h(114): warning C4251: 'Camera::right': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\camera.h(115): warning C4251: 'Camera::worldUp': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\include\headers\camera.h(117): warning C4251: 'Camera::cameraTarget': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-d:\repos\proyectocga\cgalib\src\thirdpersoncamera.cpp(23): warning C4305: '=': truncamiento de 'double' a 'float'
-d:\repos\proyectocga\cgalib\src\thirdpersoncamera.cpp(25): warning C4305: '=': truncamiento de 'double' a 'float'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Camera.h(111,12): warning C4251: 'Camera::position': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Camera.h(112,12): warning C4251: 'Camera::front': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Camera.h(113,12): warning C4251: 'Camera::up': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Camera.h(114,12): warning C4251: 'Camera::right': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Camera.h(115,12): warning C4251: 'Camera::worldUp': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\include\Headers\Camera.h(117,12): warning C4251: 'Camera::cameraTarget': struct 'glm::vec<3,float,glm::packed_highp>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\external\glm\glm\fwd.hpp(418): message : vea la declaración de 'glm::vec<3,float,glm::packed_highp>'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\ThirdPersonCamera.cpp(23,32): warning C4305: '=': truncamiento de 'double' a 'float'
+C:\Users\josed\Documents\GitHub\ProyectoCGA\CGALib\src\ThirdPersonCamera.cpp(25,33): warning C4305: '=': truncamiento de 'double' a 'float'
   TimeManager.cpp
-     Creando biblioteca D:\Repos\ProyectoCGA\Release\CGALib.lib y objeto D:\Repos\ProyectoCGA\Release\CGALib.exp
+     Creando biblioteca C:\Users\josed\Documents\GitHub\ProyectoCGA\Release\CGALib.lib y objeto C:\Users\josed\Documents\GitHub\ProyectoCGA\Release\CGALib.exp
   Generando código
-  All 1485 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Previous IPDB not found, fall back to full compilation.
+  All 1341 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Generación de código finalizada
-  CGALib.vcxproj -> D:\Repos\ProyectoCGA\Release\CGALib.dll
+  CGALib.vcxproj -> C:\Users\josed\Documents\GitHub\ProyectoCGA\Release\CGALib.dll

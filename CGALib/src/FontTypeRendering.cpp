@@ -125,11 +125,11 @@ void FontTypeRendering::render(const std::string &str, float x, float y) {
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 	glUseProgram (program);
 	// Se envia el color de la fuente.
-	glUniform4f(colorUniform, 0.5, 1.0, 1.0, 1.0);
+	glUniform4f(colorUniform, 0.84, 0.77, 0.58, 1.0);
 	// Se envia la textura a utilizar.
 	glUniform1i(texUniform, 0);
 	// Se coloca el tama�o en Pixeles de la fuente.
-	FT_Set_Pixel_Sizes(face, 0, 12);
+	FT_Set_Pixel_Sizes(face, 0, 20);
 	// Renderiza la fuente.
 	render_text(str, face, x, y, SCALEX, SCALEY);
 	// Se desabilita el sample de textura.

@@ -20,8 +20,8 @@ public:
 	std::vector<std::vector<CellState>> tablero;
 	int jugadorActual = NEGRO;
 	bool juegoActivo = false;
-	int piezasBlancas;
-	int piezasNegras;
+	int piezasBlancas = 0;
+	int piezasNegras= 0;
 	int victoria = INDETERMINADO;
 
 	//funciones
