@@ -21,4 +21,3 @@ void main(){
 	our_uv.x += offsetX;
 
 }
-

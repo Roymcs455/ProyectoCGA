@@ -76,6 +76,8 @@ Shader shaderParticlesFire;
 Shader shaderViewDepth;
 //Shader para dibujar el buffer de profunidad
 Shader shaderDepth;
+//Shader para visualizar solo una textura
+Shader shaderViewTexture;
 
 //Presiento que no vale la pena utilizar una cámara en primera persona
 std::shared_ptr<Camera> camera(new ThirdPersonCamera()); 
@@ -90,6 +92,7 @@ Box boxCollider;
 Sphere sphereCollider(10, 10);
 Box boxViewDepth;
 Box boxLightViewBox;
+Box boxRenderImagen;
 
 //CARGA DE MODELOS
 Model modelFichaNegra;
@@ -115,7 +118,7 @@ glm::mat4 matrixModelCasillaCastillo = glm::mat4(1.0f);
 // Terrain model instance
 Terrain terrain(-1, -1, 200, 16, "../Textures/heightmap.png");
 
-GLuint textureCespedID, textureWallID, textureWindowID, textureHighwayID, textureLandingPadID;
+GLuint textureCespedID, textureWallID, textureWindowID, textureHighwayID, textureLandingPadID, textureFrameID;
 GLuint textureTerrainBackgroundID, textureTerrainRID, textureTerrainGID, textureTerrainBID, textureTerrainBlendMapID;
 GLuint textureParticleFountainID, textureParticleFireID, texId;
 GLuint skyboxTextureID;
@@ -434,6 +437,8 @@ void init(int width, int height, std::string strTitle, bool bFullScreen) {
 	shaderParticlesFire.initialize("../Shaders/particlesFire.vs", "../Shaders/particlesFire.fs", {"Position", "Velocity", "Age"});
 	shaderViewDepth.initialize("../Shaders/texturizado.vs", "../Shaders/texturizado_depth_view.fs");
 	shaderDepth.initialize("../Shaders/shadow_mapping_depth.vs", "../Shaders/shadow_mapping_depth.fs");
+	shaderViewTexture.initialize("../Shaders/texturizado.vs", "../Shaders/texturizado.fs");
+
 
 	// Inicializacion de los objetos.
 	skyboxSphere.init();
@@ -448,11 +453,18 @@ void init(int width, int height, std::string strTitle, bool bFullScreen) {
 	sphereCollider.setShader(&shader);
 	sphereCollider.setColor(glm::vec4(1.0, 1.0, 1.0, 1.0));
 
+
+
 	boxViewDepth.init();
 	boxViewDepth.setShader(&shaderViewDepth);
 
 	boxLightViewBox.init();
 	boxLightViewBox.setShader(&shaderViewDepth);
+
+
+	boxRenderImagen.init();
+	boxRenderImagen.setShader(&shaderViewTexture);
+	boxRenderImagen.setScale(glm::vec3(2.0f, 2.0f, 1.0f));
 
 	// Inicialización de las fichas;
 	//modelFichaBlanca.loadModel("../models/PiezaBlanca/PiezaBlanca.obj");
@@ -512,8 +524,44 @@ void init(int width, int height, std::string strTitle, bool bFullScreen) {
 		skyboxTexture.freeImage(bitmap);
 	}
 
+	// Definiendo la textura del UI
+	Texture textureFrame("../Textures/goku.png");
+	// Carga el mapa de bits (FIBITMAP es el tipo de dato de la libreria)
+	bitmap = textureFrame.loadImage();
+	// Convertimos el mapa de bits en un arreglo unidimensional de tipo unsigned char
+	data = textureFrame.convertToData(bitmap, imageWidth,
+		imageHeight);
+	// Creando la textura con id 1
+	glGenTextures(1, &textureFrameID);
+	// Enlazar esa textura a una tipo de textura de 2D.
+	glBindTexture(GL_TEXTURE_2D, textureFrameID);
+	// set the texture wrapping parameters
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); // set texture wrapping to GL_REPEAT (default wrapping method)
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	// set texture filtering parameters
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	// Verifica si se pudo abrir la textura
+	if (data) {
+		// Transferis los datos de la imagen a memoria
+		// Tipo de textura, Mipmaps, Formato interno de openGL, ancho, alto, Mipmaps,
+		// Formato interno de la libreria de la imagen, el tipo de dato y al apuntador
+		// a los datos
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, imageWidth, imageHeight, 0,
+			GL_BGRA, GL_UNSIGNED_BYTE, data);
+		// Generan los niveles del mipmap (OpenGL es el ecargado de realizarlos)
+		glGenerateMipmap(GL_TEXTURE_2D);
+	}
+	else
+		std::cout << "Failed to load texture" << std::endl;
+	// Libera la memoria de la textura
+	textureFrame.freeImage(bitmap);
+
+
+
+
 	// Definiendo la textura a utilizar
-	Texture textureCesped("../Textures/cesped.jpg");
+	Texture textureCesped("../Textures/marcoDos.png");
 	// Carga el mapa de bits (FIBITMAP es el tipo de dato de la libreria)
 	bitmap = textureCesped.loadImage();
 	// Convertimos el mapa de bits en un arreglo unidimensional de tipo unsigned char
@@ -1019,6 +1067,7 @@ void destroy() {
 	shaderTerrain.destroy();
 	shaderParticlesFountain.destroy();
 	shaderParticlesFire.destroy();
+	shaderViewTexture.destroy();
 
 	// Basic objects Delete
 	skyboxSphere.destroy();
@@ -1026,6 +1075,7 @@ void destroy() {
 	sphereCollider.destroy();
 	boxViewDepth.destroy();
 	boxLightViewBox.destroy();
+	boxRenderImagen.destroy();
 
 	// Terrains objects Delete
 	terrain.destroy();
@@ -1054,6 +1104,7 @@ void destroy() {
 	glDeleteTextures(1, &textureTerrainBlendMapID);
 	glDeleteTextures(1, &textureParticleFountainID);
 	glDeleteTextures(1, &textureParticleFireID);
+	glDeleteTextures(1, &textureFrameID);
 
 	// Cube Maps Delete
 	glBindTexture(GL_TEXTURE_CUBE_MAP, 0);
@@ -1288,42 +1339,47 @@ void applicationLoop() {
 		/*******************************************
 		 * 1.- We render the depth buffer
 		 *******************************************/
-		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+		glViewport(0, 0, screenWidth, screenHeight);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		shaderViewTexture.setMatrix4("view", 1, false, glm::value_ptr(glm::mat4(1.0)));
+		shaderViewTexture.setMatrix4("projection", 1, false, glm::value_ptr(glm::mat4(1.0)));
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, textureCespedID);
+		boxRenderImagen.setScale(glm::vec3(2, 2, 1.0));
+		boxRenderImagen.render();
+		/*glfwSwapBuffers(window);
+		continue;*/
+
 		// render scene from light's point of view
 		glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
 		glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
 		glClear(GL_DEPTH_BUFFER_BIT);
 		//glCullFace(GL_FRONT);
-		prepareDepthScene();
-		renderScene(true);
+		//prepareDepthScene();
+		//renderScene(true);
 		//glCullFace(GL_BACK);
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
-		/*******************************************
-		 * Debug to view the texture view map
-		 *******************************************/
-		// reset viewport
-		/*glViewport(0, 0, screenWidth, screenHeight);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		// render Depth map to quad for visual debugging
-		shaderViewDepth.setMatrix4("projection", 1, false, glm::value_ptr(glm::mat4(1.0)));
-		shaderViewDepth.setMatrix4("view", 1, false, glm::value_ptr(glm::mat4(1.0)));
-		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, depthMap);
-		boxViewDepth.setScale(glm::vec3(2.0, 2.0, 1.0));
-		boxViewDepth.render();*/
 
 		/*******************************************
 		 * 2.- We render the normal objects
 		 *******************************************/
 		glViewport(0, 0, screenWidth, screenHeight);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		prepareScene();
+		//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		//prepareScene();
 		glActiveTexture(GL_TEXTURE10);
 		glBindTexture(GL_TEXTURE_2D, depthMap);
 		shaderMulLighting.setInt("shadowMap", 10);
 		shaderTerrain.setInt("shadowMap", 10);
+
+		/*******************************************
+		 * Carga UI
+		 *******************************************/
+
+
+
+
+
 		/*******************************************
 		 * Skybox
 		 *******************************************/
@@ -1332,7 +1388,7 @@ void applicationLoop() {
 		// deshabilita el modo del recorte de caras ocultas para ver las esfera desde adentro
 		glGetIntegerv(GL_CULL_FACE_MODE, &oldCullFaceMode);
 		glGetIntegerv(GL_DEPTH_FUNC, &oldDepthFuncMode);
-		shaderSkybox.setFloat("skybox", 0);
+		shaderSkybox.setFloat("skybox", 1);
 		glCullFace(GL_FRONT);
 		glDepthFunc(GL_LEQUAL);
 		glActiveTexture(GL_TEXTURE0);
@@ -1343,7 +1399,7 @@ void applicationLoop() {
 		/*******************************************
 		 * Debug to box light box
 		 *******************************************/
-		
+	
 
 		/*******************************************
 		 * Creacion de colliders
@@ -1556,6 +1612,8 @@ void prepareScene(){
 
 	skyboxSphere.setShader(&shaderSkybox);
 	terrain.setShader(&shaderTerrain);
+	boxRenderImagen.setShader(&shaderViewTexture);
+
 }
 
 void prepareDepthScene(){
@@ -1563,6 +1621,8 @@ void prepareDepthScene(){
 	skyboxSphere.setShader(&shaderDepth);
 
 	terrain.setShader(&shaderDepth);
+
+	boxRenderImagen.setShader(&shaderViewTexture);
 }
 
 void renderScene(bool renderParticles){
