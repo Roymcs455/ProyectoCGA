@@ -27,9 +27,14 @@ void Hnefatafl::ResetTablero()
 		{ESCAPE,EMPTY, EMPTY, ATTACKER,ATTACKER,ATTACKER,ATTACKER,ATTACKER, EMPTY,EMPTY,ESCAPE}
 	};
 	tablero = nuevoTablero;
+	piezasBlancas = 13;
+	piezasNegras = 24;
 }
 bool Hnefatafl::MoverFicha(int origenX, int origenY, int destinoX, int destinoY)
 {
+	std::cout << "intentando mover: " << origenX << "." << origenY
+		<< " a " << destinoX << "." << destinoY << std::endl;
+	
 	CellState origen = TipoCasilla(origenX, origenY);
 	CellState destino = TipoCasilla(destinoX, destinoY);
 	if(origen == EMPTY || origen == INVALID || origen == ESCAPE) //se intenta mover una casilla vacía o inválida
@@ -40,7 +45,7 @@ bool Hnefatafl::MoverFicha(int origenX, int origenY, int destinoX, int destinoY)
 		return false;
 	if (origen != KING && destino == ESCAPE) // se intenta mover pieza no rey a castillo
 		return false;
-	if (destino != EMPTY)
+	if (destino != EMPTY && destino != ESCAPE)
 		return false;
 	if (origenX == destinoX) //Moviendose en el eje Y;
 	{
@@ -48,12 +53,12 @@ bool Hnefatafl::MoverFicha(int origenX, int origenY, int destinoX, int destinoY)
 		{
 			if (origenY > destinoY)
 			{
-				if (TipoCasilla(origenX, origenY - i) != EMPTY)
+				if (TipoCasilla(origenX, origenY - i) == ATTACKER || TipoCasilla(origenX, origenY - i) == DEFENDER || TipoCasilla(origenX, origenY - i) == KING)
 					return false;
 			}
 			if (origenY < destinoY)
 			{
-				if (TipoCasilla(origenX, origenY + i) != EMPTY)
+				if (TipoCasilla(origenX, origenY + i) == ATTACKER || TipoCasilla(origenX, origenY + i) == DEFENDER || TipoCasilla(origenX, origenY + i) == KING  )
 					return false;
 			}
 		}
@@ -64,12 +69,12 @@ bool Hnefatafl::MoverFicha(int origenX, int origenY, int destinoX, int destinoY)
 		{
 			if (origenX > destinoX)
 			{
-				if (TipoCasilla(origenX - i, origenY ) != EMPTY)
+				if (TipoCasilla(origenX - i, origenY) == ATTACKER || TipoCasilla(origenX - i, origenY) == DEFENDER || TipoCasilla(origenX - i, origenY) == KING )
 					return false;
 			}
 			if (origenX < destinoX)
 			{
-				if (TipoCasilla(origenX + i, origenY) != EMPTY)
+				if (TipoCasilla(origenX + i, origenY) == ATTACKER || TipoCasilla(origenX + i, origenY) == DEFENDER || TipoCasilla(origenX + i, origenY) == KING)
 					return false;
 			}
 		}
@@ -77,6 +82,29 @@ bool Hnefatafl::MoverFicha(int origenX, int origenY, int destinoX, int destinoY)
 	
 	
 	tablero[destinoX][destinoY] = tablero[origenX][origenY];
+	if (TipoCasilla(destinoX,destinoY) == KING )
+	{
+		if (destinoX == 0 && destinoY == 0) // el rey escapó
+		{
+			victoria = BLANCO;
+			return true;
+		}
+		if (destinoX == 0 && destinoY == 10) // el rey escapó
+		{
+			victoria = BLANCO;
+			return true;
+		}
+		if (destinoX == 10 && destinoY == 0) // el rey escapó
+		{
+			victoria = BLANCO;
+			return true;
+		}
+		if (destinoX == 10 && destinoY == 10) // el rey escapó
+		{
+			victoria = BLANCO;
+			return true;
+		}
+	}
 	if (origenX == 5 && origenY == 5)
 	{
 		tablero[origenX][origenY] = ESCAPE;
@@ -85,18 +113,8 @@ bool Hnefatafl::MoverFicha(int origenX, int origenY, int destinoX, int destinoY)
 	else
 	{
 		tablero[origenX][origenY] = EMPTY;
-		
 	}
-	/*
-	for (int j = 0; j < BOARD_SIZE; j++)
-	{
-		for (int i = 0; i < BOARD_SIZE; i++)
-		{
-			std::cout << " " << tablero[j][i] << " ";
-		}
-		std::cout << std::endl;
-	}*/
-	CapturarEnCasilla(destinoX, destinoY, origen);
+	victoria = CapturarEnCasilla(destinoX, destinoY, origen);
 	return true;
 
 
@@ -104,14 +122,34 @@ bool Hnefatafl::MoverFicha(int origenX, int origenY, int destinoX, int destinoY)
 bool Hnefatafl::EvalFichaRodeada(int x, int y)
 {
 	CellState tipoDeCasilla = TipoCasilla(x, y);
-	if (TipoCasilla(x + 1, y) == EMPTY || (x - 1, y) == EMPTY || (x , y + 1) == EMPTY || (x , y - 1) == EMPTY )
+	/*
+	*/
+	std::cout << "Prueba Ficha rodeada: x:" << x <<" y:"<<y
+		<< " x+1 y " << TipoCasilla(x + 1, y) << " "  
+		<< "x-1 y " << TipoCasilla(x - 1, y) << " "  
+		<< "x y+1 " << TipoCasilla(x , y+1) << " "  
+		<< "x y-1 " << TipoCasilla(x , y-1) << " "  
+		<<std::endl;
+		
+	if (TipoCasilla(x + 1, y) == EMPTY)//Abajo hay casilla vacía
+		return false;
+	if (TipoCasilla(x - 1, y) == EMPTY)//Abajo hay casilla vacía
+		return false;
+	if (TipoCasilla(x , y+1) == EMPTY)//Abajo hay casilla vacía
+		return false;
+	if (TipoCasilla(x , y-1) == EMPTY)//Abajo hay casilla vacía
+		return false;
+
+	if (tipoDeCasilla == KING)
 	{
-		return false; //no está rodeada
-		if (tipoDeCasilla == KING)
-		{
-			if (TipoCasilla(x + 1, y) == ESCAPE || (x - 1, y) == ESCAPE || (x, y + 1) == ESCAPE || (x, y - 1) == ESCAPE )
-				return false;
-		}
+		if (TipoCasilla(x + 1, y) == ESCAPE)//Abajo hay casilla de escape
+			return false;
+		if (TipoCasilla(x - 1, y) == ESCAPE)//Arriba hay casilla de escape
+			return false;
+		if (TipoCasilla(x, y + 1) == ESCAPE)//A la derecha hay casilla de escape
+			return false;
+		if (TipoCasilla(x, y - 1) == ESCAPE)//A la izq hay casilla de escape
+			return false;
 	}
 	return true;
 }
@@ -170,25 +208,33 @@ Jugadores Hnefatafl::CapturarEnCasilla(int x, int y, CellState turno)
 	}
 	else //Turno == DEFENDER
 	{
-		if (TipoCasilla(x + 1, y) == ATTACKER && (TipoCasilla(x + 2, y) == ESCAPE || TipoCasilla(x + 2, y) == DEFENDER))
+		if (TipoCasilla(x + 1, y) == ATTACKER && (TipoCasilla(x + 2, y) == ESCAPE || TipoCasilla(x + 2, y) == DEFENDER || TipoCasilla(x + 2, y) == KING))
 		{
 			tablero[x + 1][y] = EMPTY;
 			piezasNegras--;
 		}
-		if (TipoCasilla(x - 1, y) == ATTACKER && (TipoCasilla(x - 2, y) == ESCAPE || TipoCasilla(x - 2, y) == DEFENDER))
+		if (TipoCasilla(x - 1, y) == ATTACKER && (TipoCasilla(x - 2, y) == ESCAPE || TipoCasilla(x - 2, y) == DEFENDER || TipoCasilla(x + 2, y) == KING))
 		{
 			tablero[x - 1][y] = EMPTY;
 			piezasNegras--;
 		}
-		if (TipoCasilla(x, y + 1) == ATTACKER && (TipoCasilla(x, y + 2) == ESCAPE || TipoCasilla(x, y + 2) == DEFENDER))
+		if (TipoCasilla(x, y + 1) == ATTACKER && (TipoCasilla(x, y + 2) == ESCAPE || TipoCasilla(x, y + 2) == DEFENDER || TipoCasilla(x + 2, y) == KING))
 		{
 			tablero[x][y + 1] = EMPTY;
 			piezasNegras--;
 		}
-		if (TipoCasilla(x, y - 1) == ATTACKER && (TipoCasilla(x, y - 2) == ESCAPE || TipoCasilla(x, y - 2) == DEFENDER))
+		if (TipoCasilla(x, y - 1) == ATTACKER && (TipoCasilla(x, y - 2) == ESCAPE || TipoCasilla(x, y - 2) == DEFENDER || TipoCasilla(x + 2, y) == KING))
 		{
 			tablero[x][y - 1] = EMPTY;
 			piezasNegras--;
 		}
+		//CONDICIONES DE VICTORIA 
+		if (piezasBlancas == 0) // Jugador blanco sin piezas, gana el negro.
+			return NEGRO;
+		if (piezasNegras == 0) //Jugador negro sin piezas, gana el blanco.
+			return BLANCO;
+		//Todavía nadie gana, el juego está INDETERMINADO.
+		return INDETERMINADO;
+
 	}
 }
