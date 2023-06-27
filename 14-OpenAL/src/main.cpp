@@ -501,8 +501,8 @@ void init(int width, int height, std::string strTitle, bool bFullScreen) {
 	//modelFichaBlanca.loadModel("../models/PiezaBlanca/PiezaBlancaAraque.fbx"); //ModeloAnimados Ataque
 	//modelFichaBlanca.loadModel("../models/PiezaBlanca/PiezaBlancaReposo.fbx"); //ModeloAnimados Reposo
 	modelFichaBlanca.setShader(&shaderMulLighting);
-	//modelFichaRey.loadModel("../models/PiezaRey/PiezaRey.obj");
-	modelFichaBlanca.loadModel("../models/PiezaRey/PiezaReyReposo.fbx"); //ModeloAnimados Reposo
+	modelFichaRey.loadModel("../models/PiezaRey/PiezaRey.obj");
+	//modelFichaBlanca.loadModel("../models/PiezaRey/PiezaReyReposo.fbx"); //ModeloAnimados Reposo
 	//modelFichaBlanca.loadModel("../models/PiezaRey/PiezaReyDerrota.fbx"); //ModeloAnimados Derrota
 	//modelFichaBlanca.loadModel("../models/PiezaRey/PiezaReyVictoria.fbx"); //ModeloAnimados Victoria
 	modelFichaRey.setShader(&shaderMulLighting);
@@ -1028,9 +1028,9 @@ void init(int width, int height, std::string strTitle, bool bFullScreen) {
 	// Config source 0
 	// Generate buffers, or else no sound will happen!
 	alGenBuffers(NUM_BUFFERS, buffer);
-	buffer[0] = alutCreateBufferFromFile("../sounds/fountain.wav");
-	buffer[1] = alutCreateBufferFromFile("../sounds/fire.wav");
-	buffer[2] = alutCreateBufferFromFile("../sounds/darth_vader.wav");
+	buffer[0] = alutCreateBufferFromFile("../sounds/Borgar.wav");
+	buffer[1] = alutCreateBufferFromFile("../sounds/Borgar.wav");
+	buffer[2] = alutCreateBufferFromFile("../sounds/Borgar.wav");
 	int errorAlut = alutGetError();
 	if (errorAlut != ALUT_ERROR_NO_ERROR){
 		printf("- Error open files with alut %d !!\n", errorAlut);
