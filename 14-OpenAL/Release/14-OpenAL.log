@@ -1,214 +1,224 @@
 ﻿  main.cpp
-e:\github\proyectocga\proyectocga\cgalib\include\headers\abstractmodel.h(264): warning C4251: 'AbstractModel::position': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  e:\github\proyectocga\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\abstractmodel.h(265): warning C4251: 'AbstractModel::scale': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  e:\github\proyectocga\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\abstractmodel.h(266): warning C4251: 'AbstractModel::color': struct 'glm::vec<4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  e:\github\proyectocga\proyectocga\external\glm\glm\fwd.hpp(419): note: vea la declaración de 'glm::vec<4,float,0>'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\abstractmodel.h(267): warning C4251: 'AbstractModel::orientation': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  e:\github\proyectocga\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\abstractmodel.h(269): warning C4251: 'AbstractModel::vertexArray': class 'std::vector<AbstractModel::Vertex,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(264): warning C4251: 'AbstractModel::position': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
+d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(265): warning C4251: 'AbstractModel::scale': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
+d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(266): warning C4251: 'AbstractModel::color': struct 'glm::vec<4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+  d:\repos\proyectocga\external\glm\glm\fwd.hpp(419): note: vea la declaración de 'glm::vec<4,float,0>'
+d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(267): warning C4251: 'AbstractModel::orientation': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
+d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(269): warning C4251: 'AbstractModel::vertexArray': class 'std::vector<AbstractModel::Vertex,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
           with
           [
               _Ty=AbstractModel::Vertex
           ]
-  e:\github\proyectocga\proyectocga\cgalib\include\headers\abstractmodel.h(245): note: vea la declaración de 'std::vector<AbstractModel::Vertex,std::allocator<_Ty>>'
+  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(245): note: vea la declaración de 'std::vector<AbstractModel::Vertex,std::allocator<_Ty>>'
           with
           [
               _Ty=AbstractModel::Vertex
           ]
-e:\github\proyectocga\proyectocga\cgalib\include\headers\abstractmodel.h(270): warning C4251: 'AbstractModel::index': class 'std::vector<std::seed_seq::result_type,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(270): warning C4251: 'AbstractModel::index': class 'std::vector<std::seed_seq::result_type,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
           with
           [
               _Ty=std::seed_seq::result_type
           ]
-  e:\programas\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\random(261): note: vea la declaración de 'std::vector<std::seed_seq::result_type,std::allocator<_Ty>>'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\random(261): note: vea la declaración de 'std::vector<std::seed_seq::result_type,std::allocator<_Ty>>'
           with
           [
               _Ty=std::seed_seq::result_type
           ]
-e:\github\proyectocga\proyectocga\cgalib\include\headers\abstractmodel.h(271): warning C4251: 'AbstractModel::aabb': class 'AbstractModel::AABB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  e:\github\proyectocga\proyectocga\cgalib\include\headers\abstractmodel.h(65): note: vea la declaración de 'AbstractModel::AABB'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\abstractmodel.h(272): warning C4251: 'AbstractModel::sbb': class 'AbstractModel::SBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  e:\github\proyectocga\proyectocga\cgalib\include\headers\abstractmodel.h(51): note: vea la declaración de 'AbstractModel::SBB'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\abstractmodel.h(273): warning C4251: 'AbstractModel::obb': class 'AbstractModel::OBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
-  e:\github\proyectocga\proyectocga\cgalib\include\headers\abstractmodel.h(94): note: vea la declaración de 'AbstractModel::OBB'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\abstractmodel.h(75): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(271): warning C4251: 'AbstractModel::aabb': class 'AbstractModel::AABB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(65): note: vea la declaración de 'AbstractModel::AABB'
+d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(272): warning C4251: 'AbstractModel::sbb': class 'AbstractModel::SBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(51): note: vea la declaración de 'AbstractModel::SBB'
+d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(273): warning C4251: 'AbstractModel::obb': class 'AbstractModel::OBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'AbstractModel'
+  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(94): note: vea la declaración de 'AbstractModel::OBB'
+d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(75): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-e:\github\proyectocga\proyectocga\cgalib\include\headers\abstractmodel.h(76): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(76): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-e:\github\proyectocga\proyectocga\cgalib\include\headers\abstractmodel.h(77): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(77): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-e:\github\proyectocga\proyectocga\cgalib\include\headers\abstractmodel.h(78): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(78): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-e:\github\proyectocga\proyectocga\cgalib\include\headers\abstractmodel.h(79): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(79): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-e:\github\proyectocga\proyectocga\cgalib\include\headers\abstractmodel.h(80): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(80): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-e:\github\proyectocga\proyectocga\cgalib\include\headers\sphere.h(39): warning C4251: 'Sphere::sbb': class 'AbstractModel::SBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Sphere'
-  e:\github\proyectocga\proyectocga\cgalib\include\headers\abstractmodel.h(51): note: vea la declaración de 'AbstractModel::SBB'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\box.h(37): warning C4251: 'Box::aabb': class 'AbstractModel::AABB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Box'
-  e:\github\proyectocga\proyectocga\cgalib\include\headers\abstractmodel.h(65): note: vea la declaración de 'AbstractModel::AABB'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\camera.h(111): warning C4251: 'Camera::position': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  e:\github\proyectocga\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\camera.h(112): warning C4251: 'Camera::front': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  e:\github\proyectocga\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\camera.h(113): warning C4251: 'Camera::up': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  e:\github\proyectocga\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\camera.h(114): warning C4251: 'Camera::right': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  e:\github\proyectocga\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\camera.h(115): warning C4251: 'Camera::worldUp': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  e:\github\proyectocga\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\camera.h(117): warning C4251: 'Camera::cameraTarget': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
-  e:\github\proyectocga\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\texture.h(66): warning C4251: 'Texture::m_fileName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Texture'
-  e:\programas\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xstring(4373): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\texture.h(69): warning C4251: 'Texture::type': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Texture'
-  e:\programas\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xstring(4373): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\bones.h(111): warning C4251: 'Bones::m_BoneMapping': class 'std::map<std::string,unsigned int,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
+d:\repos\proyectocga\cgalib\include\headers\sphere.h(39): warning C4251: 'Sphere::sbb': class 'AbstractModel::SBB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Sphere'
+  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(51): note: vea la declaración de 'AbstractModel::SBB'
+d:\repos\proyectocga\cgalib\include\headers\box.h(37): warning C4251: 'Box::aabb': class 'AbstractModel::AABB' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Box'
+  d:\repos\proyectocga\cgalib\include\headers\abstractmodel.h(65): note: vea la declaración de 'AbstractModel::AABB'
+d:\repos\proyectocga\cgalib\include\headers\camera.h(111): warning C4251: 'Camera::position': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
+d:\repos\proyectocga\cgalib\include\headers\camera.h(112): warning C4251: 'Camera::front': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
+d:\repos\proyectocga\cgalib\include\headers\camera.h(113): warning C4251: 'Camera::up': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
+d:\repos\proyectocga\cgalib\include\headers\camera.h(114): warning C4251: 'Camera::right': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
+d:\repos\proyectocga\cgalib\include\headers\camera.h(115): warning C4251: 'Camera::worldUp': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
+d:\repos\proyectocga\cgalib\include\headers\camera.h(117): warning C4251: 'Camera::cameraTarget': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Camera'
+  d:\repos\proyectocga\external\glm\glm\fwd.hpp(418): note: vea la declaración de 'glm::vec<3,float,0>'
+d:\repos\proyectocga\cgalib\include\headers\texture.h(66): warning C4251: 'Texture::m_fileName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Texture'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xstring(4373): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+d:\repos\proyectocga\cgalib\include\headers\texture.h(69): warning C4251: 'Texture::type': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Texture'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xstring(4373): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+d:\repos\proyectocga\cgalib\include\headers\bones.h(111): warning C4251: 'Bones::m_BoneMapping': class 'std::map<std::string,unsigned int,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
           with
           [
               _Kty=std::string,
               _Ty=unsigned int
           ]
-  e:\github\proyectocga\proyectocga\cgalib\include\headers\bones.h(111): note: vea la declaración de 'std::map<std::string,unsigned int,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
+  d:\repos\proyectocga\cgalib\include\headers\bones.h(111): note: vea la declaración de 'std::map<std::string,unsigned int,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
           with
           [
               _Kty=std::string,
               _Ty=unsigned int
           ]
-e:\github\proyectocga\proyectocga\cgalib\include\headers\bones.h(112): warning C4251: 'Bones::m_BoneInfo': class 'std::vector<Bones::BoneInfo,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
+d:\repos\proyectocga\cgalib\include\headers\bones.h(112): warning C4251: 'Bones::m_BoneInfo': class 'std::vector<Bones::BoneInfo,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
           with
           [
               _Ty=Bones::BoneInfo
           ]
-  e:\github\proyectocga\proyectocga\cgalib\include\headers\bones.h(112): note: vea la declaración de 'std::vector<Bones::BoneInfo,std::allocator<_Ty>>'
+  d:\repos\proyectocga\cgalib\include\headers\bones.h(112): note: vea la declaración de 'std::vector<Bones::BoneInfo,std::allocator<_Ty>>'
           with
           [
               _Ty=Bones::BoneInfo
           ]
-e:\github\proyectocga\proyectocga\cgalib\include\headers\bones.h(113): warning C4251: 'Bones::bones': class 'std::vector<Bones::VertexBoneData,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
+d:\repos\proyectocga\cgalib\include\headers\bones.h(113): warning C4251: 'Bones::bones': class 'std::vector<Bones::VertexBoneData,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Bones'
           with
           [
               _Ty=Bones::VertexBoneData
           ]
-  e:\github\proyectocga\proyectocga\cgalib\include\headers\bones.h(113): note: vea la declaración de 'std::vector<Bones::VertexBoneData,std::allocator<_Ty>>'
+  d:\repos\proyectocga\cgalib\include\headers\bones.h(113): note: vea la declaración de 'std::vector<Bones::VertexBoneData,std::allocator<_Ty>>'
           with
           [
               _Ty=Bones::VertexBoneData
           ]
-e:\github\proyectocga\proyectocga\cgalib\include\headers\mesh.h(54): warning C4251: 'Mesh::textures': class 'std::vector<Texture *,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Mesh'
+d:\repos\proyectocga\cgalib\include\headers\mesh.h(54): warning C4251: 'Mesh::textures': class 'std::vector<Texture *,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Mesh'
           with
           [
               _Ty=Texture *
           ]
-  e:\github\proyectocga\proyectocga\cgalib\include\headers\mesh.h(54): note: vea la declaración de 'std::vector<Texture *,std::allocator<_Ty>>'
+  d:\repos\proyectocga\cgalib\include\headers\mesh.h(54): note: vea la declaración de 'std::vector<Texture *,std::allocator<_Ty>>'
           with
           [
               _Ty=Texture *
           ]
-e:\github\proyectocga\proyectocga\cgalib\include\headers\model.h(66): warning C4251: 'Model::meshes': class 'std::vector<Mesh *,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Model'
+d:\repos\proyectocga\cgalib\include\headers\model.h(66): warning C4251: 'Model::meshes': class 'std::vector<Mesh *,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Model'
           with
           [
               _Ty=Mesh *
           ]
-  e:\github\proyectocga\proyectocga\cgalib\include\headers\model.h(50): note: vea la declaración de 'std::vector<Mesh *,std::allocator<_Ty>>'
+  d:\repos\proyectocga\cgalib\include\headers\model.h(50): note: vea la declaración de 'std::vector<Mesh *,std::allocator<_Ty>>'
           with
           [
               _Ty=Mesh *
           ]
-e:\github\proyectocga\proyectocga\cgalib\include\headers\model.h(67): warning C4251: 'Model::textureLoaded': class 'std::vector<Texture *,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Model'
+d:\repos\proyectocga\cgalib\include\headers\model.h(67): warning C4251: 'Model::textureLoaded': class 'std::vector<Texture *,std::allocator<_Ty>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Model'
           with
           [
               _Ty=Texture *
           ]
-  e:\github\proyectocga\proyectocga\cgalib\include\headers\mesh.h(54): note: vea la declaración de 'std::vector<Texture *,std::allocator<_Ty>>'
+  d:\repos\proyectocga\cgalib\include\headers\mesh.h(54): note: vea la declaración de 'std::vector<Texture *,std::allocator<_Ty>>'
           with
           [
               _Ty=Texture *
           ]
-e:\github\proyectocga\proyectocga\cgalib\include\headers\model.h(68): warning C4251: 'Model::directory': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Model'
-  e:\programas\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xstring(4373): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\model.h(70): warning C4251: 'Model::m_GlobalInverseTransform': struct 'glm::mat<4,4,glm::f32,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Model'
-  e:\github\proyectocga\proyectocga\external\glm\glm\fwd.hpp(518): note: vea la declaración de 'glm::mat<4,4,glm::f32,0>'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\model.h(72): warning C4251: 'Model::importer': class 'Assimp::Importer' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Model'
-  e:\github\proyectocga\proyectocga\external\assimp\include\assimp\importer.hpp(115): note: vea la declaración de 'Assimp::Importer'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\terrain.h(50): warning C4251: 'Terrain::heightMap': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Terrain'
-  e:\programas\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xstring(4373): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\animationutils.h(57): warning C4273: 'matToString': vinculación de DLL incoherente
-  e:\github\proyectocga\proyectocga\cgalib\include\headers\animationutils.h(45): note: vea la definición anterior de 'matToString'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\animationutils.h(69): warning C4273: 'appendFrame': vinculación de DLL incoherente
-  e:\github\proyectocga\proyectocga\cgalib\include\headers\animationutils.h(46): note: vea la definición anterior de 'appendFrame'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\animationutils.h(78): warning C4273: 'appendFrame': vinculación de DLL incoherente
-  e:\github\proyectocga\proyectocga\cgalib\include\headers\animationutils.h(48): note: vea la definición anterior de 'appendFrame'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\animationutils.h(86): warning C4273: 'getKeyFrames': vinculación de DLL incoherente
-  e:\github\proyectocga\proyectocga\cgalib\include\headers\animationutils.h(50): note: vea la definición anterior de 'getKeyFrames'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\animationutils.h(112): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\cgalib\include\headers\animationutils.h(128): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\cgalib\include\headers\animationutils.h(138): warning C4273: 'getKeyRotFrames': vinculación de DLL incoherente
-  e:\github\proyectocga\proyectocga\cgalib\include\headers\animationutils.h(51): note: vea la definición anterior de 'getKeyRotFrames'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\animationutils.h(153): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\cgalib\include\headers\animationutils.h(163): warning C4273: 'interpolate': vinculación de DLL incoherente
-  e:\github\proyectocga\proyectocga\cgalib\include\headers\animationutils.h(52): note: vea la definición anterior de 'interpolate'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\animationutils.h(184): warning C4273: 'interpolate': vinculación de DLL incoherente
-  e:\github\proyectocga\proyectocga\cgalib\include\headers\animationutils.h(54): note: vea la definición anterior de 'interpolate'
-e:\github\proyectocga\proyectocga\cgalib\include\headers\colisiones.h(136): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(933): warning C4018: '<': no coinciden signed/unsigned
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1148): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1149): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1150): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1151): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1155): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1184): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1184): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1186): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1186): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1215): warning C4101: 'view': variable local sin referencia
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1216): warning C4101: 'axis': variable local sin referencia
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1772): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+d:\repos\proyectocga\cgalib\include\headers\model.h(68): warning C4251: 'Model::directory': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Model'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xstring(4373): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+d:\repos\proyectocga\cgalib\include\headers\model.h(70): warning C4251: 'Model::m_GlobalInverseTransform': struct 'glm::mat<4,4,glm::f32,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Model'
+  d:\repos\proyectocga\external\glm\glm\fwd.hpp(518): note: vea la declaración de 'glm::mat<4,4,glm::f32,0>'
+d:\repos\proyectocga\cgalib\include\headers\model.h(72): warning C4251: 'Model::importer': class 'Assimp::Importer' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Model'
+  d:\repos\proyectocga\external\assimp\include\assimp\importer.hpp(115): note: vea la declaración de 'Assimp::Importer'
+d:\repos\proyectocga\cgalib\include\headers\terrain.h(50): warning C4251: 'Terrain::heightMap': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Terrain'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xstring(4373): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+d:\repos\proyectocga\cgalib\include\headers\animationutils.h(57): warning C4273: 'matToString': vinculación de DLL incoherente
+  d:\repos\proyectocga\cgalib\include\headers\animationutils.h(45): note: vea la definición anterior de 'matToString'
+d:\repos\proyectocga\cgalib\include\headers\animationutils.h(69): warning C4273: 'appendFrame': vinculación de DLL incoherente
+  d:\repos\proyectocga\cgalib\include\headers\animationutils.h(46): note: vea la definición anterior de 'appendFrame'
+d:\repos\proyectocga\cgalib\include\headers\animationutils.h(78): warning C4273: 'appendFrame': vinculación de DLL incoherente
+  d:\repos\proyectocga\cgalib\include\headers\animationutils.h(48): note: vea la definición anterior de 'appendFrame'
+d:\repos\proyectocga\cgalib\include\headers\animationutils.h(86): warning C4273: 'getKeyFrames': vinculación de DLL incoherente
+  d:\repos\proyectocga\cgalib\include\headers\animationutils.h(50): note: vea la definición anterior de 'getKeyFrames'
+d:\repos\proyectocga\cgalib\include\headers\animationutils.h(112): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+d:\repos\proyectocga\cgalib\include\headers\animationutils.h(128): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+d:\repos\proyectocga\cgalib\include\headers\animationutils.h(138): warning C4273: 'getKeyRotFrames': vinculación de DLL incoherente
+  d:\repos\proyectocga\cgalib\include\headers\animationutils.h(51): note: vea la definición anterior de 'getKeyRotFrames'
+d:\repos\proyectocga\cgalib\include\headers\animationutils.h(153): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+d:\repos\proyectocga\cgalib\include\headers\animationutils.h(163): warning C4273: 'interpolate': vinculación de DLL incoherente
+  d:\repos\proyectocga\cgalib\include\headers\animationutils.h(52): note: vea la definición anterior de 'interpolate'
+d:\repos\proyectocga\cgalib\include\headers\animationutils.h(184): warning C4273: 'interpolate': vinculación de DLL incoherente
+  d:\repos\proyectocga\cgalib\include\headers\animationutils.h(54): note: vea la definición anterior de 'interpolate'
+d:\repos\proyectocga\cgalib\include\headers\colisiones.h(136): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+d:\repos\proyectocga\14-openal\src\main.cpp(894): warning C4018: '<': no coinciden signed/unsigned
+d:\repos\proyectocga\14-openal\src\main.cpp(1111): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+d:\repos\proyectocga\14-openal\src\main.cpp(1112): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+d:\repos\proyectocga\14-openal\src\main.cpp(1113): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+d:\repos\proyectocga\14-openal\src\main.cpp(1114): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+d:\repos\proyectocga\14-openal\src\main.cpp(1118): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+d:\repos\proyectocga\14-openal\src\main.cpp(1147): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+d:\repos\proyectocga\14-openal\src\main.cpp(1147): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\repos\proyectocga\14-openal\src\main.cpp(1149): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+d:\repos\proyectocga\14-openal\src\main.cpp(1149): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\repos\proyectocga\14-openal\src\main.cpp(1528): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
           with
           [
               T=float
           ]
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1806): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1807): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-     Creando biblioteca E:\GitHub\ProyectoCGA\ProyectoCGA\Release\14-OpenAL.lib y objeto E:\GitHub\ProyectoCGA\ProyectoCGA\Release\14-OpenAL.exp
+d:\repos\proyectocga\14-openal\src\main.cpp(1542): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+d:\repos\proyectocga\14-openal\src\main.cpp(1180): warning C4101: 'view': variable local sin referencia
+d:\repos\proyectocga\14-openal\src\main.cpp(1181): warning C4101: 'axis': variable local sin referencia
+d:\repos\proyectocga\14-openal\src\main.cpp(1756): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+d:\repos\proyectocga\14-openal\src\main.cpp(1790): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+d:\repos\proyectocga\14-openal\src\main.cpp(1791): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+     Creando biblioteca D:\Repos\ProyectoCGA\Release\14-OpenAL.lib y objeto D:\Repos\ProyectoCGA\Release\14-OpenAL.exp
 LINK : warning LNK4098: la biblioteca predeterminada'MSVCRTD' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
   Generando código
-  1 of 1716 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+  1 of 1693 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     1 functions had inline decision re-evaluated but remain unchanged
   Generación de código finalizada
-glfw3.lib(context.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(context.obj)' o en 'E:\GitHub\ProyectoCGA\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(init.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(init.obj)' o en 'E:\GitHub\ProyectoCGA\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(input.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(input.obj)' o en 'E:\GitHub\ProyectoCGA\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(monitor.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(monitor.obj)' o en 'E:\GitHub\ProyectoCGA\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(vulkan.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(vulkan.obj)' o en 'E:\GitHub\ProyectoCGA\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(window.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(window.obj)' o en 'E:\GitHub\ProyectoCGA\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(win32_init.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_init.obj)' o en 'E:\GitHub\ProyectoCGA\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(win32_joystick.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_joystick.obj)' o en 'E:\GitHub\ProyectoCGA\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(win32_monitor.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_monitor.obj)' o en 'E:\GitHub\ProyectoCGA\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(win32_time.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_time.obj)' o en 'E:\GitHub\ProyectoCGA\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(win32_tls.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_tls.obj)' o en 'E:\GitHub\ProyectoCGA\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(win32_window.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_window.obj)' o en 'E:\GitHub\ProyectoCGA\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(wgl_context.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(wgl_context.obj)' o en 'E:\GitHub\ProyectoCGA\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-glfw3.lib(egl_context.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(egl_context.obj)' o en 'E:\GitHub\ProyectoCGA\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-  14-OpenAL.vcxproj -> E:\GitHub\ProyectoCGA\ProyectoCGA\Release\14-OpenAL.exe
+glfw3.lib(context.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(context.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(init.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(init.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(input.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(input.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(monitor.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(monitor.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(vulkan.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(vulkan.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(window.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(window.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(win32_init.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_init.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(win32_joystick.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_joystick.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(win32_monitor.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_monitor.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(win32_time.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_time.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(win32_tls.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_tls.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(win32_window.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(win32_window.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(wgl_context.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(wgl_context.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(egl_context.obj) : warning LNK4099: no se encontró PDB 'glfw.pdb' con 'glfw3.lib(egl_context.obj)' o en 'D:\Repos\ProyectoCGA\Release\glfw.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+  14-OpenAL.vcxproj -> D:\Repos\ProyectoCGA\Release\14-OpenAL.exe

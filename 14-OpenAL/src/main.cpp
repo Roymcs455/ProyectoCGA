@@ -114,6 +114,20 @@ Model modelFichaReyDescanso;
 //Tablero de Hnefetafl
 
 Hnefatafl tableroJuego;
+enum EstadosJuego
+{
+	INICIO,
+	BLANCO_SEL_FICHA,
+	BLANCO_SEL_CASILLA,
+	NEGRO_SEL_FICHA,
+	NEGRO_SEL_CASILLA,
+	VICTORIA_BLANCO,
+	VICTORIA_NEGRO
+};
+EstadosJuego estadoActual, estadoSiguiente;
+glm::vec3 seleccion;
+glm::vec3 origen;
+glm::vec3 destino;
 
 //MATRIZ DE TRANSFORMACION MODELOS
 
@@ -1468,12 +1482,14 @@ void applicationLoop() {
 				std::cout << "Seleccionando el modelo " << itSBB->first << std::endl;
 		}
 		std::map<std::string, std::tuple<AbstractModel::OBB, glm::mat4, glm::mat4>>::iterator itOBB;
-
+		seleccion = glm::vec3(-1.0f);
 		for (itOBB = collidersOBB.begin(); itOBB != collidersOBB.end(); itOBB++)
 		{
 			if (generarRayo && testRayOBB(origenRayoPicking, destinoRayoPicking, std::get<0>(itOBB->second)))
 			{
 				std::cout << "Seleccionando el modelo " << itOBB->first << std::endl;
+				seleccion = std::get<AbstractModel::OBB>(itOBB->second).c;
+				std::cout << "Coordenadas: " << seleccion.x << ","<< seleccion.z << std::endl;
 			}
 		}
 
@@ -1562,7 +1578,45 @@ void applicationLoop() {
 		/*******************************************
 		 * State machines
 		 *******************************************/
+		
+		//if ( false)
+		switch (estadoActual)
+		{
+		case INICIO:
+			estadoSiguiente = NEGRO_SEL_FICHA;
+			//std::cout << "INICIO, siguiente "<<estadoSiguiente << std::endl;
+			tableroJuego.ResetTablero();
+			break;
+		case NEGRO_SEL_FICHA:
+			//std::cout << "NEGRO_SEL_FICHA, coordenadas "<<seleccion.x<< "."<< seleccion.z << std::endl;
+			if (tableroJuego.TipoCasilla(seleccion.z / 2, seleccion.x / 2) == ATTACKER)
+			{
+				std::cout << "Atacante seleccionado" << std::endl;
 
+				origen = seleccion;
+				estadoSiguiente = NEGRO_SEL_CASILLA;
+			}
+			else
+			{
+				estadoSiguiente = NEGRO_SEL_FICHA;
+			}
+			break;
+		case NEGRO_SEL_CASILLA:
+			std::cout << "NEGRO_SEL_CASILLA: origen" << origen.x <<" "<< origen.y << std::endl;
+			if (tableroJuego.MoverFicha(origen.z/2, origen.x/2, seleccion.z / 2, seleccion.x / 2))
+			{
+				estadoSiguiente = NEGRO_SEL_FICHA;
+			}
+			else
+			{
+				estadoSiguiente = NEGRO_SEL_CASILLA;
+			}
+			break;
+		default:
+			estadoSiguiente = INICIO;
+			break;
+		}
+		estadoActual = estadoSiguiente;
 		
 		glfwSwapBuffers(window);
 
