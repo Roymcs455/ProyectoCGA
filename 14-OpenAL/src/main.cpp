@@ -46,6 +46,8 @@
 // Include Colision headers functions
 #include "Headers/Colisiones.h"
 
+#include "Headers/FontTypeRendering.h"
+
 // OpenAL include
 #include <AL/alut.h>
 
@@ -56,6 +58,7 @@
 
 int screenWidth;
 int screenHeight;
+int estadoPantalla = 0;
 
 const unsigned int SHADOW_WIDTH = 2048, SHADOW_HEIGHT = 2048;
 
@@ -164,6 +167,10 @@ GLuint textureCespedID, textureWallID, textureWindowID, textureHighwayID, textur
 GLuint textureTerrainBackgroundID, textureTerrainRID, textureTerrainGID, textureTerrainBID, textureTerrainBlendMapID;
 GLuint textureParticleFountainID, textureParticleFireID, texId;
 GLuint skyboxTextureID;
+
+
+FontTypeRendering::FontTypeRendering *modelText;
+FontTypeRendering::FontTypeRendering* modelTextDos;
 
 GLenum types[6] = {
 GL_TEXTURE_CUBE_MAP_POSITIVE_X,
@@ -593,7 +600,7 @@ void init(int width, int height, std::string strTitle, bool bFullScreen) {
 	}
 
 	// Definiendo la textura del UI
-	Texture textureFrame("../Textures/goku.png");
+	Texture textureFrame("../Textures/marcoInicio.png");
 	// Carga el mapa de bits (FIBITMAP es el tipo de dato de la libreria)
 	bitmap = textureFrame.loadImage();
 	// Convertimos el mapa de bits en un arreglo unidimensional de tipo unsigned char
@@ -1118,6 +1125,14 @@ void init(int width, int height, std::string strTitle, bool bFullScreen) {
 	alSourcei(source[2], AL_BUFFER, buffer[2]);
 	alSourcei(source[2], AL_LOOPING, AL_TRUE);
 	alSourcef(source[2], AL_MAX_DISTANCE, 500);
+
+
+	modelText = new FontTypeRendering::FontTypeRendering(screenWidth, screenHeight);
+	modelText->Initialize();
+
+	modelTextDos = new FontTypeRendering::FontTypeRendering(screenWidth, screenHeight);
+	modelTextDos->Initialize();
+
 }
 
 void destroy() {
@@ -1243,6 +1258,15 @@ void mouseButtonCallback(GLFWwindow *window, int button, int state, int mod) {
 bool processInput(bool continueApplication) {
 	if (exitApp || glfwWindowShouldClose(window) != 0) {
 		return false;
+	}
+
+	if (glfwGetKey(window, GLFW_KEY_ENTER) == GLFW_PRESS)
+		estadoPantalla = 1;
+
+	if (glfwGetKey(window, GLFW_KEY_BACKSPACE) == GLFW_PRESS)
+	{
+		estadoPantalla = 0;
+		tableroJuego.ResetTablero();
 	}
 
 	// Para camara en tercera persona:
@@ -1421,14 +1445,37 @@ void applicationLoop() {
 		/*******************************************
 		 * 1.- We render the depth buffer
 		 *******************************************/
-		glViewport(0, 0, screenWidth, screenHeight);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		shaderViewTexture.setMatrix4("view", 1, false, glm::value_ptr(glm::mat4(1.0)));
-		shaderViewTexture.setMatrix4("projection", 1, false, glm::value_ptr(glm::mat4(1.0)));
-		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, textureCespedID);
-		boxRenderImagen.setScale(glm::vec3(2, 2, 1.0));
-		boxRenderImagen.render();
+
+		//Creación pantalla inicio
+
+		
+		if (estadoPantalla == 0)
+		{
+			glViewport(0, 0, screenWidth, screenHeight);
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			shaderViewTexture.setMatrix4("view", 1, false, glm::value_ptr(glm::mat4(1.0)));
+			shaderViewTexture.setMatrix4("projection", 1, false, glm::value_ptr(glm::mat4(1.0)));
+			glActiveTexture(GL_TEXTURE0);
+			glBindTexture(GL_TEXTURE_2D, textureFrameID);
+			boxRenderImagen.setScale(glm::vec3(2, 2, 1.0));
+			boxRenderImagen.render();
+		}
+
+		else if (estadoPantalla == 1)
+		{
+			glViewport(0, 0, screenWidth, screenHeight);
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			shaderViewTexture.setMatrix4("view", 1, false, glm::value_ptr(glm::mat4(1.0)));
+			shaderViewTexture.setMatrix4("projection", 1, false, glm::value_ptr(glm::mat4(1.0)));
+			glActiveTexture(GL_TEXTURE0);
+			glBindTexture(GL_TEXTURE_2D, textureCespedID);
+			boxRenderImagen.setScale(glm::vec3(2, 2, 1.0));
+			boxRenderImagen.render();
+		}
+		
+
+
+		
 		/*glfwSwapBuffers(window);
 		continue;*/
 
@@ -1690,6 +1737,8 @@ void applicationLoop() {
 		seleccion = glm::vec3(-1.0f);
 		estadoActual = estadoSiguiente;
 		
+		modelText->render(std::to_string(tableroJuego.piezasBlancas+1), -0.4, -0.875);
+		modelTextDos->render(std::to_string(tableroJuego.piezasNegras), 0.6, -0.875);
 		glfwSwapBuffers(window);
 
 
