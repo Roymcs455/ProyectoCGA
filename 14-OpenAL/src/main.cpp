@@ -126,6 +126,8 @@ enum EstadosJuego
 	BLANCO_SEL_FICHA,
 	BLANCO_DEBOUNCER,
 	BLANCO_SEL_CASILLA,
+	SWITCH_B_N_DEBOUNCER,
+	SWITCH_N_B_DEBOUNCER,
 	NEGRO_SEL_FICHA,
 	NEGRO_DEBOUNCER,
 	NEGRO_SEL_CASILLA,
@@ -133,6 +135,9 @@ enum EstadosJuego
 	VICTORIA_NEGRO
 };
 EstadosJuego estadoActual, estadoSiguiente;
+bool mouseButtonFramePasado = false;
+bool mouseButtonFrameActual = false;
+double contadorDebounce = 0.0f;
 glm::vec3 seleccion;
 glm::vec3 origen;
 glm::vec3 destino;
@@ -269,6 +274,7 @@ bool processInput(bool continueApplication = true);
 void prepareScene();
 void prepareDepthScene();
 void renderScene(bool renderParticles = true);
+
 
 void initParticleBuffers() {
 	// Generate the buffers
@@ -1246,6 +1252,8 @@ void mouseButtonCallback(GLFWwindow *window, int button, int state, int mod) {
 			break;
 		case GLFW_MOUSE_BUTTON_LEFT:
 			std::cout << "lastMousePos.x:" << lastMousePosX << std::endl;
+			mouseButtonFrameActual = true;
+
 			break;
 		case GLFW_MOUSE_BUTTON_MIDDLE:
 			std::cout << "lastMousePos.x:" << lastMousePosX << std::endl;
@@ -1253,9 +1261,18 @@ void mouseButtonCallback(GLFWwindow *window, int button, int state, int mod) {
 			break;
 		}
 	}
+	if (state == GLFW_RELEASE)
+	{
+		switch (button) {
+		case GLFW_MOUSE_BUTTON_LEFT:
+			mouseButtonFrameActual = false;
+			break;
+		}
+	}
 }
 
 bool processInput(bool continueApplication) {
+	//std::cout << "En funcion processInput" << std::endl;
 	if (exitApp || glfwWindowShouldClose(window) != 0) {
 		return false;
 	}
@@ -1270,9 +1287,10 @@ bool processInput(bool continueApplication) {
 	}
 
 	// Para camara en tercera persona:
-	
-	if(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
+	if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
 		camera->mouseMoveCamera(offsetX, 0.0, deltaTime);
+		
+		
 	if(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS)
 		camera->mouseMoveCamera(0.0, offsetY, deltaTime);
 	// Para camara en primera persona:
@@ -1307,7 +1325,7 @@ void applicationLoop() {
 	glm::vec3 axis;
 	glm::vec3 target = glm::vec3(10.0f,0.0f,10.0f);
 	float angleTarget=90.0f;
-
+	
 	// Rendereizado de modelos 
 	matrixModelFichaBlanca = glm::translate(matrixModelFichaBlanca, glm::vec3(10.0f, 0.0f, 0.0f));
 	matrixModelFichaBlanca = glm::scale(matrixModelFichaBlanca, glm::vec3(1.0f, 1.0f, 1.0f));
@@ -1353,6 +1371,14 @@ void applicationLoop() {
 		lastTime = currTime;
 		TimeManager::Instance().CalculateFrameRate(true);
 		deltaTime = TimeManager::Instance().DeltaTime;
+		if (mouseButtonFrameActual == true)
+		{
+			contadorDebounce += deltaTime;
+		}
+		else
+		{
+			contadorDebounce = 0;
+		}
 		psi = processInput(true);
 
 		std::map<std::string, bool> collisionDetection;
@@ -1681,9 +1707,9 @@ void applicationLoop() {
 
 		/*******************************************
 		 * State machines
-		 *******************************************/
-		std::cout << "Seleccion: "<< seleccion.x <<" "<< seleccion.y << " " << seleccion.z << " " << std::endl;
-		//if ( false)
+		 *******************************************/	
+		
+		//if ( true)
 		switch (estadoActual)
 		{
 		case INICIO:
@@ -1691,20 +1717,26 @@ void applicationLoop() {
 			estadoSiguiente = NEGRO_SEL_FICHA;
 			break;
 		case NEGRO_SEL_FICHA:
-			std::cout << "Estado: NSF " << std::endl;
-			if (seleccion != glm::vec3(1.0f)&& !tableroJuego.EvalFichaRodeada(seleccion.x/2,seleccion.z/2))
+			std::cout << "Turno de las fichas NEGRAS: Selecciona una ficha válida " << std::endl;
+			if (mouseButtonFrameActual == true)
 			{
-				origen = seleccion;
-				estadoSiguiente = NEGRO_SEL_CASILLA;
-			}
-			else
-			{
-				estadoSiguiente = NEGRO_SEL_FICHA;
+				if (tableroJuego.EvalFichaRodeada(seleccion.z / 2, seleccion.x / 2) == false  )
+				{
+					if (tableroJuego.TipoCasilla(seleccion.z / 2, seleccion.x / 2) == ATTACKER)
+					{
+						origen = seleccion; //copia las coordenadas de la casilla seleccionada, las usa para el estado negro_sel_casilla
+						estadoSiguiente = NEGRO_DEBOUNCER;
+					}
+					else
+					std::cout << "La ficha seleccionada no es una ficha NEGRA, selecciona una ficha apropiada!" << std::endl;
+				}
+				else
+					std::cout << "La ficha seleccionada está rodeada y no se puede mover!" << std::endl;
+				std::cout << "Seleccion: " << seleccion.x <<" " << seleccion.y<< " " <<seleccion.z << std::endl;
 			}
 			break;
 		case NEGRO_DEBOUNCER:
-			std::cout << "Estado: ND " << std::endl;
-			if (seleccion == glm::vec3(-1.0f))
+			if (mouseButtonFrameActual == false)
 			{
 				estadoSiguiente = NEGRO_SEL_CASILLA;
 			}
@@ -1715,20 +1747,74 @@ void applicationLoop() {
 			break;
 		case NEGRO_SEL_CASILLA:
 			std::cout << "Estado: NSC " << std::endl;
-			if (tableroJuego.MoverFicha(origen.x/2, origen.z/2, seleccion.x/2,seleccion.z/2) )
+			if (mouseButtonFrameActual == true)
 			{
-				estadoSiguiente = NEGRO_SEL_CASILLA;
+				if (tableroJuego.MoverFicha(origen.z / 2, origen.x / 2, seleccion.z / 2, seleccion.x / 2))
+					estadoSiguiente = SWITCH_N_B_DEBOUNCER;
+				else
+					std::cout << "Destino invalido, está ocupado, hay una o más piezas entre destino y origen o el destino está ocupado!" << std::endl;
+			}
+			if (tableroJuego.victoria == NEGRO)
+				estadoSiguiente = VICTORIA_NEGRO;
+			break;
+		case SWITCH_N_B_DEBOUNCER:
+			if (mouseButtonFrameActual == false)
+				estadoSiguiente = BLANCO_SEL_FICHA;
+			else
+				estadoSiguiente = SWITCH_N_B_DEBOUNCER;
+			break;
+		case BLANCO_SEL_FICHA:
+			std::cout << "Turno de las fichas BLANCAS: Selecciona una ficha válida " << std::endl;
+			if (mouseButtonFrameActual == true)
+			{
+				if (tableroJuego.EvalFichaRodeada(seleccion.z / 2, seleccion.x / 2) == false)
+				{
+					if (tableroJuego.TipoCasilla(seleccion.z / 2, seleccion.x / 2) == DEFENDER || tableroJuego.TipoCasilla(seleccion.z / 2, seleccion.x / 2) == KING)
+					{
+						origen = seleccion; //copia las coordenadas de la casilla seleccionada, las usa para el estado negro_sel_casilla
+						estadoSiguiente = BLANCO_DEBOUNCER;
+					}
+					else
+						std::cout << "La ficha seleccionada no es una ficha BLANCA, selecciona una ficha apropiada!" << std::endl;
+				}
+				else
+					std::cout << "La ficha seleccionada está rodeada y no se puede mover!" << std::endl;
+			}
+			break;
+		case BLANCO_DEBOUNCER:
+			std::cout << "Estado: BD " << std::endl;
+			if (mouseButtonFrameActual == false)
+			{
+				estadoSiguiente = BLANCO_SEL_CASILLA;
 			}
 			else
 			{
-				estadoSiguiente = NEGRO_SEL_CASILLA;
+				estadoSiguiente = BLANCO_DEBOUNCER;
 			}
 			break;
-		case BLANCO_SEL_FICHA:
-			break;
-		case BLANCO_DEBOUNCER:
-			break;
 		case BLANCO_SEL_CASILLA:
+			std::cout << "Estado: BSC " << std::endl;
+			if (mouseButtonFrameActual == true)
+			{
+				if (tableroJuego.MoverFicha(origen.z / 2, origen.x / 2, seleccion.z / 2, seleccion.x / 2))
+					estadoSiguiente = SWITCH_B_N_DEBOUNCER;
+				else
+					std::cout << "Destino invalido, está ocupado, hay una o más piezas entre destino y origen o el destino está ocupado!" << std::endl;
+			}
+			if (tableroJuego.victoria == BLANCO)
+				estadoSiguiente = VICTORIA_BLANCO;
+			break;
+		case SWITCH_B_N_DEBOUNCER:
+			if (mouseButtonFrameActual == false)
+				estadoSiguiente = NEGRO_SEL_FICHA;
+			else
+				estadoSiguiente = SWITCH_B_N_DEBOUNCER;
+			break;
+		case VICTORIA_BLANCO:
+			std::cout << "VICTORIA DEL JUGADOR BLANCO" << std::endl;
+			break;
+		case VICTORIA_NEGRO:
+			std::cout << "VICTORIA DEL JUGADOR NEGRO" << std::endl;
 			break;
 		default:
 			estadoSiguiente = INICIO;
@@ -1847,6 +1933,7 @@ void renderScene(bool renderParticles){
 	 *******************************************/
 	//matrixModelFichaBlanca[3][0] = terrain.getHeightTerrain(matrixModelFichaBlanca[3][0], matrixModelFichaBlanca[3][2]);
 	//modelFichaBlanca.render(matrixModelFichaBlanca);
+
 	glm::mat4 matrixModelCasillas = glm::mat4(matrixModelCasillaBlanca);
 	if(true)//para debug
 	for (int i = 0; i < 11; i++)
@@ -2037,9 +2124,13 @@ void renderScene(bool renderParticles){
 
 int main(int argc, char **argv) {
 	tableroJuego.ResetTablero();
-	tableroJuego.MoverFicha(3, 0, 3, 4);
-	tableroJuego.MoverFicha(3, 10, 3, 6);
-	tableroJuego.MoverFicha(6, 4, 2, 4);
+	//tableroJuego.MoverFicha(3, 0, 3, 4);
+	//tableroJuego.MoverFicha(3, 10, 3, 6);
+	//tableroJuego.MoverFicha(6, 4, 2, 4);
+	if (tableroJuego.EvalFichaRodeada(5, 1))
+		std::cout << " la ficha esta rodeada" << std::endl;
+	else
+		std::cout << " la ficha no esta rodeada" << std::endl;
 	init(800, 700, "Window GLFW", false);
 	applicationLoop();
 	destroy();
