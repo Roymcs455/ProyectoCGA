@@ -171,29 +171,29 @@ e:\github\proyectocga\proyectocga\cgalib\include\headers\animationutils.h(163): 
 e:\github\proyectocga\proyectocga\cgalib\include\headers\animationutils.h(184): warning C4273: 'interpolate': vinculación de DLL incoherente
   e:\github\proyectocga\proyectocga\cgalib\include\headers\animationutils.h(54): note: vea la definición anterior de 'interpolate'
 e:\github\proyectocga\proyectocga\cgalib\include\headers\colisiones.h(136): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(880): warning C4018: '<': no coinciden signed/unsigned
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1097): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1098): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1099): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1100): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1104): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1133): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1133): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1135): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1135): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1166): warning C4101: 'view': variable local sin referencia
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1167): warning C4101: 'axis': variable local sin referencia
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1702): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(933): warning C4018: '<': no coinciden signed/unsigned
+e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1148): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1149): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1150): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1151): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1155): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1184): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1184): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1186): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1186): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1215): warning C4101: 'view': variable local sin referencia
+e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1216): warning C4101: 'axis': variable local sin referencia
+e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1772): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1736): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1737): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1806): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+e:\github\proyectocga\proyectocga\14-openal\src\main.cpp(1807): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
      Creando biblioteca E:\GitHub\ProyectoCGA\ProyectoCGA\Release\14-OpenAL.lib y objeto E:\GitHub\ProyectoCGA\ProyectoCGA\Release\14-OpenAL.exp
 LINK : warning LNK4098: la biblioteca predeterminada'MSVCRTD' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
   Generando código
-  2 of 1689 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
+  1 of 1716 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     1 functions had inline decision re-evaluated but remain unchanged
   Generación de código finalizada

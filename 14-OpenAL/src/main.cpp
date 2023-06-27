@@ -100,10 +100,22 @@ Model modelCasillaNegra;
 Model modelCasillaCastillo;
 Model modelFichaPrueba;
 
+//CARGA DE MODELOS ANIMADOS
+Model modelFichaBlancaDefensa;
+Model modelFichaBlancaAraque;
+Model modelFichaBlancaDescanso;
+Model modelFichaNegraDefensa;
+Model modelFichaNegraAraque;
+Model modelFichaNegraDescanso;
+Model modelFichaReyWin;
+Model modelFichaReyDefeat;
+Model modelFichaReyDescanso;
+
 //Tablero de Hnefetafl
 
 Hnefatafl tableroJuego;
 
+//MATRIZ DE TRANSFORMACION MODELOS
 
 glm::mat4 matrixModelFichaNegra = glm::mat4(1.0f);
 glm::mat4 matrixModelFichaBlanca = glm::mat4(1.0f);
@@ -113,6 +125,18 @@ glm::mat4 matirxModelFichaPrueba = glm::mat4(1.0f);
 glm::mat4 matrixModelCasillaNegra = glm::mat4(1.0f);
 glm::mat4 matrixModelCasillaBlanca = glm::mat4(1.0f);
 glm::mat4 matrixModelCasillaCastillo = glm::mat4(1.0f);
+
+//MATRIZ DE TRANSFORMACION MODELOS ANIMADOS
+
+glm::mat4 matrixModelFichaBlancaDefensa = glm::mat4(1.0f);
+glm::mat4 matrixModelFichaBlancaAraque = glm::mat4(1.0f);
+glm::mat4 matrixModelFichaBlancaDescanso = glm::mat4(1.0f);
+glm::mat4 matrixModelFichaNegraDefensa = glm::mat4(1.0f);
+glm::mat4 matrixModelFichaNegraAraque = glm::mat4(1.0f);
+glm::mat4 matrixModelFichaNegraDescanso = glm::mat4(1.0f);
+glm::mat4 matrixModelFichaReyWin = glm::mat4(1.0f);
+glm::mat4 matrixModelFichaReyDefeat = glm::mat4(1.0f);
+glm::mat4 matrixModelFichaReyDescanso = glm::mat4(1.0f);
 
 // Terrain model instance
 Terrain terrain(-1, -1, 200, 16, "../Textures/heightmap.png");
@@ -457,10 +481,19 @@ void init(int width, int height, std::string strTitle, bool bFullScreen) {
 
 	// Inicialización de las fichas;
 	modelFichaBlanca.loadModel("../models/PiezaBlanca/PiezaBlanca.obj");
+	//modelFichaBlanca.loadModel("../models/PiezaBlanca/PiezaBlancaDefensa.fbx"); //ModeloAnimados Defensa
+	//modelFichaBlanca.loadModel("../models/PiezaBlanca/PiezaBlancaAraque.fbx"); //ModeloAnimados Ataque
+	//modelFichaBlanca.loadModel("../models/PiezaBlanca/PiezaBlancaReposo.fbx"); //ModeloAnimados Reposo
 	modelFichaBlanca.setShader(&shaderMulLighting);
-	modelFichaRey.loadModel("../models/PiezaRey/PiezaRey.obj");
+	//modelFichaRey.loadModel("../models/PiezaRey/PiezaRey.obj");
+	modelFichaBlanca.loadModel("../models/PiezaRey/PiezaReyReposo.fbx"); //ModeloAnimados Reposo
+	//modelFichaBlanca.loadModel("../models/PiezaRey/PiezaReyDerrota.fbx"); //ModeloAnimados Derrota
+	//modelFichaBlanca.loadModel("../models/PiezaRey/PiezaReyVictoria.fbx"); //ModeloAnimados Victoria
 	modelFichaRey.setShader(&shaderMulLighting);
-	modelFichaNegra.loadModel("../models/PiezaRoja/PiezaRoja.obj");
+	modelFichaNegra.loadModel("../models/PiezaRoja/PiezaRoja.obj"); 
+	//modelFichaNegra.loadModel("../models/PiezaRoja/PiezaRojaDefensa.fbx"); //ModeloAnimados Defensa
+	//modelFichaNegra.loadModel("../models/PiezaRoja/PiezaRojaAtaque.fbx"); //ModeloAnimados Ataque
+	//modelFichaNegra.loadModel("../models/PiezaRoja/PiezaRojaReposo.fbx"); //ModeloAnimados Reposo
 	modelFichaNegra.setShader(&shaderMulLighting);
 	//modelFichaPrueba.loadModel("../models/PiezaBlanca/PiezaBlanca.obj");
 	//modelFichaPrueba.setShader(&shaderMulLighting);
@@ -471,6 +504,26 @@ void init(int width, int height, std::string strTitle, bool bFullScreen) {
 	modelCasillaNegra.setShader(&shaderMulLighting);
 	modelCasillaCastillo.loadModel("../models/CasillaCastillo/casillaCastillo.obj");
 	modelCasillaCastillo.setShader(&shaderMulLighting);
+
+	// INICIALIZACION DE LOS MODELOS ANIMADOS
+	/*modelFichaBlancaDefensa.loadModel("../models/PiezaBlanca/PiezaBlancaDefensa.fbx");
+	modelFichaBlancaDefensa.setShader(&shaderMulLighting);
+	modelFichaBlancaAraque.loadModel("../models/PiezaBlanca/PiezaBlancaAraque.fbx");
+	modelFichaBlancaAraque.setShader(&shaderMulLighting);
+	modelFichaBlancaDescanso.loadModel("../models/PiezaBlanca/PiezaBlancaReposo.fbx");
+	modelFichaBlancaDescanso.setShader(&shaderMulLighting);
+	modelFichaNegraDefensa.loadModel("../models/PiezaRoja/PiezaRojaDefensa.fbx");
+	modelFichaNegraDefensa.setShader(&shaderMulLighting);
+	modelFichaNegraAraque.loadModel("../models/PiezaRoja/PiezaRojaAtaque.fbx");
+	modelFichaNegraAraque.setShader(&shaderMulLighting);
+	modelFichaNegraDescanso.loadModel("../models/PiezaRoja/PiezaRojaReposo.fbx");
+	modelFichaNegraDescanso.setShader(&shaderMulLighting);
+	modelFichaReyWin.loadModel("../models/PiezaRey/PiezaReyVictoria.fbx");
+	modelFichaReyWin.setShader(&shaderMulLighting);
+	modelFichaReyDefeat.loadModel("../models/PiezaRey/PiezaReyDerrota.fbx");
+	modelFichaReyDefeat.setShader(&shaderMulLighting);
+	modelFichaReyDescanso.loadModel("../models/PiezaRey/PiezaReyReposo.fbx"); 
+	modelFichaReyDescanso.setShader(&shaderMulLighting);*/
 
 	terrain.init();
 	terrain.setShader(&shaderTerrain);
@@ -926,8 +979,7 @@ void init(int width, int height, std::string strTitle, bool bFullScreen) {
 	glGenFramebuffers(1, &depthMapFBO);
 	glGenTextures(1, &depthMap);
 	glBindTexture(GL_TEXTURE_2D, depthMap);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT,
-				 SHADOW_WIDTH, SHADOW_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, SHADOW_WIDTH, SHADOW_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	/*glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
@@ -968,7 +1020,6 @@ void init(int width, int height, std::string strTitle, bool bFullScreen) {
 		printf("- Error open files with alut %d !!\n", errorAlut);
 		exit(2);
 	}
-
 
 	alGetError(); /* clear error */
 	alGenSources(NUM_SOURCES, source);
@@ -1133,8 +1184,6 @@ bool processInput(bool continueApplication) {
 		camera->mouseMoveCamera(offsetX, 0.0, deltaTime);
 	if(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS)
 		camera->mouseMoveCamera(0.0, offsetY, deltaTime);
-	
-
 	// Para camara en primera persona:
 	
 	offsetX = 0;
@@ -1168,15 +1217,30 @@ void applicationLoop() {
 	glm::vec3 target = glm::vec3(10.0f,0.0f,10.0f);
 	float angleTarget=90.0f;
 
-	matrixModelFichaBlanca = glm::translate(matrixModelFichaBlanca, glm::vec3(1.0f, 0.0f, 0.0f));
-	matrixModelFichaBlanca = glm::scale(matrixModelFichaBlanca, glm::vec3(1.0f));
+	// Rendereizado de modelos 
+	matrixModelFichaBlanca = glm::translate(matrixModelFichaBlanca, glm::vec3(10.0f, 0.0f, 0.0f));
+	matrixModelFichaBlanca = glm::scale(matrixModelFichaBlanca, glm::vec3(1.0f, 1.0f, 1.0f));
 	matrixModelFichaRey = glm::translate(matrixModelFichaRey, glm::vec3(-6.0f, 0.0f, 0.0f));
-	matrixModelFichaRey = glm::scale(matrixModelFichaBlanca, glm::vec3(1.0f));
+	matrixModelFichaRey = glm::scale(matrixModelFichaRey, glm::vec3(1.0f));
 	matrixModelFichaNegra = glm::translate(matrixModelFichaNegra, glm::vec3(-9.0f, 0.0f, 0.0f));
-	matrixModelFichaNegra = glm::scale(matrixModelFichaBlanca, glm::vec3(2.0f));
-	glm::mat4 matrixModelPiezaFichaPrueba = glm::mat4(matirxModelFichaPrueba);
+	matrixModelFichaNegra = glm::scale(matrixModelFichaNegra, glm::vec3(1.0f));
+	/*glm::mat4 matrixModelPiezaFichaPrueba = glm::mat4(matirxModelFichaPrueba);
 	matrixModelPiezaFichaPrueba = glm::scale(matrixModelPiezaFichaPrueba, glm::vec3(3.0f, 3.0f, 3.0f));
-	modelFichaPrueba.render(matrixModelPiezaFichaPrueba);
+	modelFichaPrueba.render(matrixModelPiezaFichaPrueba);*/
+
+	// Renderizado de Modelos animados
+	/*glm::mat4 matrixModelFichaBlancaDefensaBody = glm::mat4(matrixModelFichaBlancaDefensa);
+	matrixModelFichaBlancaDefensaBody = glm::scale(matrixModelFichaBlancaDefensaBody, glm::vec3(1.0f, 1.0f, 1.0f));
+	modelFichaBlancaDefensa.render(matrixModelFichaBlancaDefensaBody);
+	glm::mat4 matrixModelFichaBlancaDefensa = glm::mat4(1.0f);
+	glm::mat4 matrixModelFichaBlancaAraque = glm::mat4(1.0f);
+	glm::mat4 matrixModelFichaBlancaDescanso = glm::mat4(1.0f);
+	glm::mat4 matrixModelFichaNegraDefensa = glm::mat4(1.0f);
+	glm::mat4 matrixModelFichaNegraAraque = glm::mat4(1.0f);
+	glm::mat4 matrixModelFichaNegraDescanso = glm::mat4(1.0f);
+	glm::mat4 matrixModelFichaReyWin = glm::mat4(1.0f);
+	glm::mat4 matrixModelFichaReyDefeat = glm::mat4(1.0f);
+	glm::mat4 matrixModelFichaReyDescanso = glm::mat4(1.0f);*/
 
 	lastTime = TimeManager::Instance().GetTime();
 
@@ -1633,12 +1697,18 @@ void renderScene(bool renderParticles){
 			case ESCAPE:
 				break;
 			case KING:
+				matrixModelFichaRey = glm::translate(matrixModelFichaRey, glm::vec3(-6.0f, 0.0f, 0.0f));
+				matrixModelFichaRey = glm::scale(matrixModelFichaRey, glm::vec3(0.1f));
 				modelFichaRey.render(matrixModelCasillas);
 				break;
 			case DEFENDER:
+				//matrixModelFichaBlanca = glm::translate(matrixModelFichaBlanca, glm::vec3(10.0f, 0.0f, 0.0f));
+				//matrixModelFichaBlanca = glm::scale(matrixModelFichaBlanca, glm::vec3(1.0f, 1.0f, 1.0f));
 				modelFichaBlanca.render(matrixModelCasillas);
 				break;
 			case ATTACKER:
+				//matrixModelFichaNegra = glm::translate(matrixModelFichaNegra, glm::vec3(-9.0f, 0.0f, 0.0f));
+				//matrixModelFichaNegra = glm::scale(matrixModelFichaNegra, glm::vec3(1.0f));
 				modelFichaNegra.render(matrixModelCasillas);
 				break;
 			case INVALID:
