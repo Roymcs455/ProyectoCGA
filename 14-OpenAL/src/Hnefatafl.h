@@ -20,29 +20,18 @@ public:
 	std::vector<std::vector<CellState>> tablero;
 	int jugadorActual = NEGRO;
 	bool juegoActivo = false;
+	int piezasBlancas;
+	int piezasNegras;
 	int victoria = INDETERMINADO;
 
 	//funciones
 	Hnefatafl();
 	~Hnefatafl();
-	/*
-	Este método pone todas las casillas en EMPTY y luego pone las posiciones iniciales de las fichas;
-	*/
 	void ResetTablero();
-	/*
-		Si no pudo mover la ficha marca false, caso contrario marca true
-	*/
 	bool MoverFicha(int origenX, int origenY, int destinoX, int destinoY);
-	/*
-		Devuelve el tipo de la casilla;
-	*/
+	bool EvalFichaRodeada(int x, int y);
 	CellState TipoCasilla(int x, int y);
-	/*
-		Marca true si captura el rey
-	*/
-	bool CapturarEnCasilla(int x, int y);
-	void CambiarJugadorActual();
-	void EmpezarJuego();
+	Jugadores CapturarEnCasilla(int x, int y, CellState turno);
 
 
 private:

@@ -107,8 +107,10 @@ enum EstadosJuego
 {
 	INICIO,
 	BLANCO_SEL_FICHA,
+	BLANCO_DEBOUNCER,
 	BLANCO_SEL_CASILLA,
 	NEGRO_SEL_FICHA,
+	NEGRO_DEBOUNCER,
 	NEGRO_SEL_CASILLA,
 	VICTORIA_BLANCO,
 	VICTORIA_NEGRO
@@ -1418,14 +1420,13 @@ void applicationLoop() {
 				std::cout << "Seleccionando el modelo " << itSBB->first << std::endl;
 		}
 		std::map<std::string, std::tuple<AbstractModel::OBB, glm::mat4, glm::mat4>>::iterator itOBB;
-		seleccion = glm::vec3(-1.0f);
+		
 		for (itOBB = collidersOBB.begin(); itOBB != collidersOBB.end(); itOBB++)
 		{
 			if (generarRayo && testRayOBB(origenRayoPicking, destinoRayoPicking, std::get<0>(itOBB->second)))
 			{
-				std::cout << "Seleccionando el modelo " << itOBB->first << std::endl;
+				//std::cout << "Seleccionando el modelo " << itOBB->first << std::endl;
 				seleccion = std::get<AbstractModel::OBB>(itOBB->second).c;
-				std::cout << "Coordenadas: " << seleccion.x << ","<< seleccion.z << std::endl;
 			}
 		}
 
@@ -1514,21 +1515,18 @@ void applicationLoop() {
 		/*******************************************
 		 * State machines
 		 *******************************************/
-		
+		std::cout << "Seleccion: "<< seleccion.x <<" "<< seleccion.y << " " << seleccion.z << " " << std::endl;
 		//if ( false)
 		switch (estadoActual)
 		{
 		case INICIO:
+			std::cout << "Estado: INICIO " << std::endl;
 			estadoSiguiente = NEGRO_SEL_FICHA;
-			//std::cout << "INICIO, siguiente "<<estadoSiguiente << std::endl;
-			tableroJuego.ResetTablero();
 			break;
 		case NEGRO_SEL_FICHA:
-			//std::cout << "NEGRO_SEL_FICHA, coordenadas "<<seleccion.x<< "."<< seleccion.z << std::endl;
-			if (tableroJuego.TipoCasilla(seleccion.z / 2, seleccion.x / 2) == ATTACKER)
+			std::cout << "Estado: NSF " << std::endl;
+			if (seleccion != glm::vec3(1.0f)&& !tableroJuego.EvalFichaRodeada(seleccion.x/2,seleccion.z/2))
 			{
-				std::cout << "Atacante seleccionado" << std::endl;
-
 				origen = seleccion;
 				estadoSiguiente = NEGRO_SEL_CASILLA;
 			}
@@ -1537,21 +1535,39 @@ void applicationLoop() {
 				estadoSiguiente = NEGRO_SEL_FICHA;
 			}
 			break;
-		case NEGRO_SEL_CASILLA:
-			std::cout << "NEGRO_SEL_CASILLA: origen" << origen.x <<" "<< origen.y << std::endl;
-			if (tableroJuego.MoverFicha(origen.z/2, origen.x/2, seleccion.z / 2, seleccion.x / 2))
+		case NEGRO_DEBOUNCER:
+			std::cout << "Estado: ND " << std::endl;
+			if (seleccion == glm::vec3(-1.0f))
 			{
-				estadoSiguiente = NEGRO_SEL_FICHA;
+				estadoSiguiente = NEGRO_SEL_CASILLA;
+			}
+			else
+			{
+				estadoSiguiente = NEGRO_DEBOUNCER;
+			}
+			break;
+		case NEGRO_SEL_CASILLA:
+			std::cout << "Estado: NSC " << std::endl;
+			if (tableroJuego.MoverFicha(origen.x/2, origen.z/2, seleccion.x/2,seleccion.z/2) )
+			{
+				estadoSiguiente = NEGRO_SEL_CASILLA;
 			}
 			else
 			{
 				estadoSiguiente = NEGRO_SEL_CASILLA;
 			}
 			break;
+		case BLANCO_SEL_FICHA:
+			break;
+		case BLANCO_DEBOUNCER:
+			break;
+		case BLANCO_SEL_CASILLA:
+			break;
 		default:
 			estadoSiguiente = INICIO;
 			break;
 		}
+		seleccion = glm::vec3(-1.0f);
 		estadoActual = estadoSiguiente;
 		
 		glfwSwapBuffers(window);
@@ -1841,9 +1857,13 @@ void renderScene(bool renderParticles){
 }
 
 int main(int argc, char **argv) {
+	tableroJuego.ResetTablero();
+	tableroJuego.MoverFicha(3, 0, 3, 4);
+	tableroJuego.MoverFicha(3, 10, 3, 6);
+	tableroJuego.MoverFicha(6, 4, 2, 4);
 	init(800, 700, "Window GLFW", false);
-	
 	applicationLoop();
 	destroy();
 	return 1;
+	
 }
