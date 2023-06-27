@@ -213,17 +213,17 @@ Jugadores Hnefatafl::CapturarEnCasilla(int x, int y, CellState turno)
 			tablero[x + 1][y] = EMPTY;
 			piezasNegras--;
 		}
-		if (TipoCasilla(x - 1, y) == ATTACKER && (TipoCasilla(x - 2, y) == ESCAPE || TipoCasilla(x - 2, y) == DEFENDER || TipoCasilla(x + 2, y) == KING))
+		if (TipoCasilla(x - 1, y) == ATTACKER && (TipoCasilla(x - 2, y) == ESCAPE || TipoCasilla(x - 2, y) == DEFENDER || TipoCasilla(x - 2, y) == KING))
 		{
 			tablero[x - 1][y] = EMPTY;
 			piezasNegras--;
 		}
-		if (TipoCasilla(x, y + 1) == ATTACKER && (TipoCasilla(x, y + 2) == ESCAPE || TipoCasilla(x, y + 2) == DEFENDER || TipoCasilla(x + 2, y) == KING))
+		if (TipoCasilla(x, y + 1) == ATTACKER && (TipoCasilla(x, y + 2) == ESCAPE || TipoCasilla(x, y + 2) == DEFENDER || TipoCasilla(x , y + 2) == KING))
 		{
 			tablero[x][y + 1] = EMPTY;
 			piezasNegras--;
 		}
-		if (TipoCasilla(x, y - 1) == ATTACKER && (TipoCasilla(x, y - 2) == ESCAPE || TipoCasilla(x, y - 2) == DEFENDER || TipoCasilla(x + 2, y) == KING))
+		if (TipoCasilla(x, y - 1) == ATTACKER && (TipoCasilla(x, y - 2) == ESCAPE || TipoCasilla(x, y - 2) == DEFENDER || TipoCasilla(x , y - 2) == KING))
 		{
 			tablero[x][y - 1] = EMPTY;
 			piezasNegras--;

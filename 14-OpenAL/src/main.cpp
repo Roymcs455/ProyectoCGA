@@ -1264,11 +1264,13 @@ bool processInput(bool continueApplication) {
 
 	// Para camara en tercera persona:
 	if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
-		camera->mouseMoveCamera(offsetX, 0.0, deltaTime);
+	{
+
+	}
 		
 		
 	if(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS)
-		camera->mouseMoveCamera(0.0, offsetY, deltaTime);
+		camera->mouseMoveCamera(offsetX, offsetY, deltaTime);
 	// Para camara en primera persona:
 	
 	offsetX = 0;
